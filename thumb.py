@@ -93,8 +93,13 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 outer_segment_width = tocm(24)
 middle_segment_width = tocm(19)
 inner_segment_width = tocm(20)
-base_segment_width = tocm(90)
+base_segment_width = tocm(98)
+base0_length = tocm(58)
+# adjust_xcoord_relative_to_fingers_section = tocm(12)
+adjust_xcoord_for_base = tocm(9)
+adjust_ycoord_for_base = tocm(22.5) - (base0_length / 2)
 adjust_xcoord_relative_to_fingers_section = tocm(12)
+xcoord_inner0 = inner_segment_width / 2 + tocm(45)
 adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
 ############################################
@@ -104,7 +109,6 @@ adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
 # base dimensions
 base0_width = base_segment_width
-base0_length = tocm(45)
 base0_hight = tocm(34)
 
 # top surface incline:
@@ -133,8 +137,8 @@ THUMB_BASE_SECTION_SETTINGS.append(base0_settings)
 
 ############segment locations############### {{{3
 THUMB_BASE_SECTION_SETTINGS[0]["location"] = (
-    tocm(5),
-    tocm(0),
+    adjust_xcoord_for_base,
+    adjust_ycoord_for_base,
     tocm(0)
 )
 ########################################## 3}}}
@@ -191,7 +195,6 @@ THUMB_INNER_SECTION_SETTINGS.append(inner0_settings)
 
 ############segment locations############### {{{3
 inner0 = THUMB_INNER_SECTION_SETTINGS[0]["base_dimensions"]
-xcoord = inner_segment_width / 2 + base_segment_width / 2
 # As you rotatate the segment, gaps appear. To avoid that, move segment into the base segment.
 inner0_adjust_xcoord_for_rotation = tocm(2)
 # adjust xcoord to position thumb section relative
@@ -199,7 +202,7 @@ inner0_adjust_xcoord_for_rotation = tocm(2)
 inner0_adjust_xcoord = inner0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 inner0_ycoord_adjust = tocm(5) + adjust_ycoord_relative_to_fingers_section
 THUMB_INNER_SECTION_SETTINGS[0]["location"] = (
-    -xcoord + inner0_adjust_xcoord,
+    -xcoord_inner0 + inner0_adjust_xcoord,
     tocm(0) - inner0_ycoord_adjust,
     tocm(0)
 )
@@ -254,7 +257,7 @@ THUMB_MIDDLE_SECTION_SETTINGS.append(middle0_settings)
 
 ############segment locations############### {{{3
 middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
-xcoord = middle_segment_width / 2 + inner_segment_width + base_segment_width / 2
+xcoord = middle_segment_width / 2 + inner_segment_width / 2 + xcoord_inner0
 middle0_adjust_xcoord_for_rotation = tocm(3)
 middle0_adjust_xcoord = middle0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 middle0_ycoord_adjust = tocm(7) + adjust_ycoord_relative_to_fingers_section
@@ -314,7 +317,7 @@ THUMB_OUTER_SECTION_SETTINGS.append(outer0_settings)
 
 ############segment locations############### {{{3
 outer0 = THUMB_OUTER_SECTION_SETTINGS[0]["base_dimensions"]
-xcoord = outer_segment_width / 2 + middle_segment_width + inner_segment_width + base_segment_width / 2
+xcoord = outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2 + xcoord_inner0
 outer0_adjust_xcoord_for_rotation = tocm(5)
 outer0_adjust_xcoord = outer0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 outer0_ycoord_adjust = tocm(10) + adjust_ycoord_relative_to_fingers_section
