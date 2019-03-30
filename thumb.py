@@ -577,6 +577,7 @@ def cut_off_at_base_back_level(rootComp, ui):  # {{{
                     for f in b.faces:
                         # all ycoords are positive and equal
                         if f.vertices.item(0).geometry.y == f.vertices.item(2).geometry.y \
+                            == f.vertices.item(1).geometry.y \
                                 and f.vertices.item(0).geometry.y > 0.0 and f.vertices.item(2).geometry.y > 0.0:
                             cut_off_back_base = f
                     continue
