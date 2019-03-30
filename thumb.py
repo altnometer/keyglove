@@ -53,7 +53,7 @@ def tocm(mm):
 
 # all dimensions are in mm, convert to tocm() before using.
 BASE_HIGHT = tocm(0)  # use to adjust the hight of all keyboard parts
-THUMB_SECTION_HIGHT = BASE_HIGHT + tocm(-20)  # use to adjust the hight of fingers part
+THUMB_SECTION_HIGHT = BASE_HIGHT + tocm(-25)  # use to adjust the hight of fingers part
 # THUMB_SECTION_SHELL_THICKNESS = tocm(2)
 THUMB_SECTION_SHELL_THICKNESS = tocm(1.5)
 SWITCH_LENGTH = tocm(14)
