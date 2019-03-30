@@ -611,6 +611,50 @@ def cut_off_at_base_back_level(rootComp, ui):  # {{{
 #  }}}
 
 
+# cut off the bit that sticks out the top face of the inner segment  body.
+def cut_off_at_inner_top_from_base(rootComp, ui):  # {{{
+    occs = rootComp.occurrences
+    for comp in occs:
+        comp = comp.component
+        if "base" in comp.name:
+            for b in comp.bRepBodies:
+                if comp.name in b.name:
+                    targetBody = b
+                    target_comp = comp
+        if "inner" in comp.name:
+            for b in comp.bRepBodies:
+                if comp.name in b.name:
+                    for f in b.faces:
+                        # all zcoords are greater than zero
+                        if f.vertices.item(0).geometry.z > 0.0 and f.vertices.item(2).geometry.y > 0.0 \
+                                and f.vertices.item(1).geometry.z > 0.0 and f.vertices.item(3).geometry.z > 0.0:
+                            cut_off_top_face = f
+                    continue
+
+    # Create SplitBodyFeatureInput
+    splitBodyFeats = rootComp.features.splitBodyFeatures
+    splitBodyInput = splitBodyFeats.createInput(targetBody, cut_off_top_face, True)
+    # Create split body feature
+    splitBodyFeats.add(splitBodyInput)
+
+    # select the correct body - the one that contains the base_corner
+    keep_body_idx = 0
+    for idx, spb in enumerate(target_comp.bRepBodies):
+        for v in spb.vertices:
+            # select the bottom body: zcoord == 0.0
+            if f.vertices.item(0).geometry.z == 0.0 and f.vertices.item(2).geometry.y == 0.0:
+                keep_body_idx = idx
+                break
+        if keep_body_idx != 0:
+            break
+    bs = [x for i, x in enumerate(target_comp.bRepBodies) if i != keep_body_idx]
+    for b in bs:
+        b.deleteMe()
+    #ui.messageBox('body:\n{}'.format(dir(bottom_split_body)))
+    # bottom_split_body.name = "{}_bottom".format(settings["name"])
+#  }}}
+
+
 # shell the body, must contain a named body which will be shelled.
 def shell(rootComp, ui):  # {{{
     # get the comp containing the target body
@@ -885,6 +929,7 @@ def run(context):  # {{{
         add_dove_tail(rootComp, ui)
         combine(rootComp, ui)
         cut_into_base(rootComp, ui)
+        cut_off_at_inner_top_from_base(rootComp, ui)
         cut_off_at_base_back_level(rootComp, ui)
         # cut off the tip of the inner switch,
         # use only if it sticks out obove the base top surface
