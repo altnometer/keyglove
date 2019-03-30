@@ -1178,6 +1178,8 @@ def cut_switch_holes(rootComp, ui):  # {{{
 # }}}
 
 
+# offset the bottom surface edges. The created profile is used to cut
+# the receiving part of the dove tail joint.
 def offset(rootComp, ui):  # {{{
     occs = rootComp.occurrences
     comp = occs.item(IDX_COMPONENT_WITH_COMPBINED_BODY).component
@@ -1278,7 +1280,7 @@ def run(context):  # {{{
                     add_finger_segment(subComp, segment_settings, ui)
         combine(rootComp, ui)
         # add_dove_tail(rootComp, ui)
-        offset(rootComp, ui)
+        # offset(rootComp, ui)
         shell(rootComp, ui)
         cut_switch_holes(rootComp, ui)
     except Exception as e:
