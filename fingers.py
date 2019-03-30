@@ -553,7 +553,7 @@ ring0_length = tocm(22)
 ring0_hight = tocm(10)
 
 # switch center
-ring0_switch_center = (tocm(-0.5), tocm(-2.5), tocm(0))
+ring0_switch_center = (tocm(-0.5), tocm(-1.0), tocm(0))
 
 # switch surface:
 ring0_surf_low = ring0_hight
