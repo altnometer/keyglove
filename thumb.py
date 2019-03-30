@@ -620,7 +620,8 @@ def cut_off_at_inner_top_from_base(rootComp, ui):  # {{{
             for b in comp.bRepBodies:
                 if comp.name in b.name:
                     targetBody = b
-                    target_comp = comp
+            target_comp = comp
+            continue
         if "inner" in comp.name:
             for b in comp.bRepBodies:
                 if comp.name in b.name:
@@ -628,24 +629,30 @@ def cut_off_at_inner_top_from_base(rootComp, ui):  # {{{
                         # all zcoords are greater than zero
                         if f.vertices.item(0).geometry.z > 0.0 and f.vertices.item(2).geometry.y > 0.0 \
                                 and f.vertices.item(1).geometry.z > 0.0 and f.vertices.item(3).geometry.z > 0.0:
-                            cut_off_top_face = f
-                    continue
+                            cut_off_inner_top_face = f
+                            break
+            continue
 
     # Create SplitBodyFeatureInput
     splitBodyFeats = rootComp.features.splitBodyFeatures
-    splitBodyInput = splitBodyFeats.createInput(targetBody, cut_off_top_face, True)
+    splitBodyInput = splitBodyFeats.createInput(targetBody, cut_off_inner_top_face, True)
     # Create split body feature
     splitBodyFeats.add(splitBodyInput)
 
-    # select the correct body - the one that contains the base_corner
-    keep_body_idx = 0
+    # select the correct body - the one that has a bottom face
+    keep_body_idx = None
     for idx, spb in enumerate(target_comp.bRepBodies):
-        for v in spb.vertices:
-            # select the bottom body: zcoord == 0.0
-            if f.vertices.item(0).geometry.z == 0.0 and f.vertices.item(2).geometry.y == 0.0:
-                keep_body_idx = idx
-                break
-        if keep_body_idx != 0:
+        # ui.messageBox('spb.name:\n{}'.format(spb.name))
+        for f in spb.faces:
+            for v in f.vertices:
+                # select the bottom body: zcoord == 0.0
+                # ui.messageBox('f.vertices.item(0).geometry.z:\n{}'.format(f.vertices.item(0).geometry.z))
+                # ui.messageBox('f.vertices.item(2).geometry.z:\n{}'.format(f.vertices.item(2).geometry.z))
+                if f.vertices.item(0).geometry.z == 0.0 and f.vertices.item(2).geometry.z == 0.0:
+                    keep_body_idx = idx
+                    # ui.messageBox('set keep_body_idx to {}\n: '.format(keep_body_idx))
+                    break
+        if keep_body_idx is not None:
             break
     bs = [x for i, x in enumerate(target_comp.bRepBodies) if i != keep_body_idx]
     for b in bs:
