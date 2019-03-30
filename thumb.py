@@ -98,7 +98,7 @@ base0_length = tocm(58)
 # adjust_xcoord_relative_to_fingers_section = tocm(12)
 adjust_xcoord_for_base = tocm(9)
 adjust_ycoord_for_base = tocm(22.5) - (base0_length / 2)
-adjust_xcoord_relative_to_fingers_section = tocm(12)
+adjust_xcoord_relative_to_fingers_section = tocm(19)
 xcoord_inner0 = inner_segment_width / 2 + tocm(45)
 adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
