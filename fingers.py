@@ -210,7 +210,7 @@ indx2_top_surf_corners = {
 # use this for the rotation in the switch surface XY plane.
 # positive values - anti clockwise
 # negative values - clockwise
-indx2_switch_rotation_angle_deg = 3.0
+indx2_switch_rotation_angle_deg = 2.0
 
 # you do not need to touch these settings
 indx2_settings = {
