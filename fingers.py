@@ -816,7 +816,7 @@ pinky2 = PINKY_SECTION_SETTINGS[2]["base_dimensions"]
 xcoord = pinky_row_width / 2 + ring_row_width + mdl_row_width / 2
 # the finger section is centered at mdl1 center,
 # we need to adjust the ycoord locations to align with the rest.
-pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky0["length"] / 2.0 + pinky1["length"])
+pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky1["length"] / 2.0 + pinky0["length"])
 PINKY_SECTION_SETTINGS[0]["location"] = (
     xcoord,
     pinky0["length"] / 2.0 + pinky1["length"] / 2.0 + pinky_ycoord_adjustment,
