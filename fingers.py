@@ -1277,7 +1277,7 @@ def run(context):  # {{{
                     # print(subComp.revisionId)
                     add_finger_segment(subComp, segment_settings, ui)
         combine(rootComp, ui)
-        add_dove_tail(rootComp, ui)
+        # add_dove_tail(rootComp, ui)
         offset(rootComp, ui)
         shell(rootComp, ui)
         cut_switch_holes(rootComp, ui)
