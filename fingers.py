@@ -357,7 +357,7 @@ mdl2_top_surf_corners = {
 # use this for the rotation in the switch surface XY plane.
 # positive values - anti clockwise
 # negative values - clockwise
-mdl2_switch_rotation_angle_deg = -3.5
+mdl2_switch_rotation_angle_deg = -3.0
 
 # you do not need to touch these settings
 mdl2_settings = {
