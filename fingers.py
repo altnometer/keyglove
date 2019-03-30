@@ -550,7 +550,7 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 # base dimensions
 ring0_width = ring_row_width
 ring0_length = tocm(22)
-ring0_hight = tocm(12)
+ring0_hight = tocm(10)
 
 # switch center
 ring0_switch_center = (tocm(-0.5), tocm(-2.5), tocm(0))
