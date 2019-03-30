@@ -512,6 +512,37 @@ def combine(rootComp, ui):  # {{{
 #  }}}
 
 
+def combine_with_base(rootComp, ui):  # {{{
+    combineFeatures = rootComp.features.combineFeatures
+    toolBodies = adsk.core.ObjectCollection.create()
+    occs = rootComp.occurrences
+    for idx, comp in enumerate(occs):
+        comp = comp.component
+        if "base" in comp.name:
+            for b in comp.bRepBodies:
+                if comp.name in b.name:
+                    toolBodies.add(b)
+                    # ui.messageBox('targetBody name:\n{}'.format(b.name))
+            continue
+        if idx == IDX_COMPONENT_WITH_COMPBINED_BODY:
+            for b in comp.bRepBodies:
+                if comp.name in b.name:
+                    targetBody = b
+                    # ui.messageBox('targetBody name:\n{}'.format(b.name))
+        # else:
+        #     for b in comp.bRepBodies:
+        #         if comp.name in b.name:
+        #             # ui.messageBox('toolBodies name:\n{}'.format(b.name))
+        #             toolBodies.add(b)
+
+    combineInput = combineFeatures.createInput(targetBody, toolBodies)
+    # combineInput.operation = adsk.fusion.FeatureOperations.CutFeatureOperation
+    combineInput.operation = adsk.fusion.FeatureOperations.JoinFeatureOperation
+    combineInput.isKeepToolBodies = False
+    combineFeatures.add(combineInput)
+#  }}}
+
+
 def cut_off_at_base_top_level(rootComp, ui):  # {{{
     # combineFeatures = rootComp.features.combineFeatures
     # toolBodies = adsk.core.ObjectCollection.create()
@@ -934,14 +965,16 @@ def run(context):  # {{{
                     add_segment(subComp, segment_settings, ui)
         chamfer_top_right_edges(rootComp, ui)
         chamfer_outer_vertical_edges(rootComp, ui)
-        add_dove_tail(rootComp, ui)
-        combine(rootComp, ui)
-        cut_into_base(rootComp, ui)
+        # add_dove_tail(rootComp, ui)
         cut_off_at_inner_top_from_base(rootComp, ui)
+        combine(rootComp, ui)
+        # cut_into_base(rootComp, ui)
         cut_off_at_base_back_level(rootComp, ui)
         # cut off the tip of the inner switch,
         # use only if it sticks out obove the base top surface
-        cut_off_at_base_top_level(rootComp, ui)
+        if inner0_surf_high > base0_hight:
+            cut_off_at_base_top_level(rootComp, ui)
+        combine_with_base(rootComp, ui)
         shell(rootComp, ui)
         cut_switch_holes(rootComp, ui)
     except Exception as e:
