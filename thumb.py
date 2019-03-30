@@ -578,7 +578,7 @@ def cut_off_at_base_back_level(rootComp, ui):  # {{{
                         # all ycoords are positive and equal
                         if f.vertices.item(0).geometry.y == f.vertices.item(2).geometry.y \
                                 and f.vertices.item(0).geometry.y > 0.0 and f.vertices.item(2).geometry.y > 0.0:
-                            cut_off_top_face = f
+                            cut_off_back_base = f
                     continue
         if idx == IDX_COMPONENT_WITH_COMPBINED_BODY:
             target_comp = comp
@@ -589,7 +589,7 @@ def cut_off_at_base_back_level(rootComp, ui):  # {{{
     # cut off the bit that sticks out the front face of the base body.
     # Create SplitBodyFeatureInput
     splitBodyFeats = rootComp.features.splitBodyFeatures
-    splitBodyInput = splitBodyFeats.createInput(targetBody, cut_off_top_face, True)
+    splitBodyInput = splitBodyFeats.createInput(targetBody, cut_off_back_base, True)
     # Create split body feature
     splitBodyFeats.add(splitBodyInput)
 
