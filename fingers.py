@@ -48,7 +48,7 @@ def tocm(mm):
     return 0.1 * mm
 
 
-###################general settings###########################################
+###################general settings####################################### {{{
 
 # all dimensions are in mm, convert to tocm() before using.
 BASE_HIGHT = tocm(0)  # use to adjust the hight of all keyboard parts
@@ -89,6 +89,7 @@ DOVE_TAIL_HIGHT = tocm(25)
 DOVE_TAIL_LENGTH = tocm(7)
 DOVE_TAIL_WIDTH_BASE = tocm(12)
 DOVE_TAIL_WIDTH_END = tocm(17)
+# }}}
 
 ##########################################################################
 ##################### fingers section settings ###########################
@@ -106,11 +107,11 @@ pinky_row_width = tocm(20)
 
 # base dimensions
 indx0_width = indx_row_width
-indx0_length = tocm(20)
+indx0_length = tocm(22)
 indx0_hight = tocm(19)
 
 # switch center
-indx0_switch_center = (tocm(2), tocm(0), tocm(0))
+indx0_switch_center = (tocm(2), tocm(-1), tocm(0))
 
 # switch surface:
 # the incline magnitude
@@ -253,7 +254,7 @@ INDEX_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 mdl0_width = mdl_row_width
-mdl0_length = tocm(20)
+mdl0_length = tocm(22)
 mdl0_hight = tocm(13)
 
 # switch center
@@ -394,11 +395,11 @@ MIDDLE_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 indxpls0_width = indxpls_row_width
-indxpls0_length = tocm(22)
+indxpls0_length = tocm(24)
 indxpls0_hight = tocm(27)
 
 # switch center
-indxpls0_switch_center = (tocm(3), tocm(-1.5), tocm(0))
+indxpls0_switch_center = (tocm(3), tocm(-2.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
@@ -548,11 +549,11 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 ring0_width = ring_row_width
-ring0_length = tocm(20)
+ring0_length = tocm(22)
 ring0_hight = tocm(12)
 
 # switch center
-ring0_switch_center = (tocm(-0.5), tocm(-1.5), tocm(0))
+ring0_switch_center = (tocm(-0.5), tocm(-2.5), tocm(0))
 
 # switch surface:
 ring0_surf_low = ring0_hight
@@ -693,11 +694,11 @@ RING_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 pinky0_width = pinky_row_width
-pinky0_length = tocm(22)
+pinky0_length = tocm(24)
 pinky0_hight = tocm(20)
 
 # switch center
-pinky0_switch_center = (tocm(-1), tocm(-2), tocm(0))
+pinky0_switch_center = (tocm(-1), tocm(-3), tocm(0))
 
 # switch surface:
 pinky0_surf_low = pinky0_hight
