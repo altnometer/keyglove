@@ -338,7 +338,7 @@ mdl2_length = tocm(26)
 mdl2_hight = tocm(7)
 
 # switch center will be transformed by these distances from base center
-mdl2_switch_center = (tocm(.25), tocm(2), tocm(0))
+mdl2_switch_center = (tocm(.25), tocm(1.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
