@@ -774,7 +774,7 @@ PINKY_SECTION_SETTINGS.append(pinky1_settings)
 # base dimensions
 pinky2_width = pinky_row_width
 pinky2_length = tocm(21)
-pinky2_hight = tocm(18)
+pinky2_hight = tocm(16)
 
 # switch center will be transformed by these distances from base center
 pinky2_switch_center = (tocm(-1), tocm(-1.5), tocm(0))
