@@ -638,7 +638,7 @@ ring2_switch_center = (tocm(-0.5), tocm(1.25), tocm(0))
 # the incline magnitude
 ring2_surf_low = ring2_hight
 ring2_surf_mdl = ring2_surf_low + tocm(1.5)
-ring2_surf_high = ring2_surf_low + tocm(15)
+ring2_surf_high = ring2_surf_low + tocm(12)
 
 # the incline direction
 # set three corners that would define surface angle.
