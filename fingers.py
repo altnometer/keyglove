@@ -264,7 +264,7 @@ mdl0_switch_center = (tocm(1.25), tocm(1.5), tocm(0))
 # the incline magnitude
 mdl0_surf_low = mdl0_hight
 mdl0_surf_mdl = mdl0_surf_low + tocm(2)
-mdl0_surf_high = mdl0_surf_low + tocm(12.5)
+mdl0_surf_high = mdl0_surf_low + tocm(10.5)
 
 # the incline direction
 # set three corners that would define surface angle.
