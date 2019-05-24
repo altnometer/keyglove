@@ -281,7 +281,7 @@ outer0_length = tocm(32)
 outer0_hight = THUMB_SECTION_HIGHT + tocm(30)
 
 # switch center
-outer0_switch_center = (tocm(0), tocm(0), tocm(0))
+outer0_switch_center = (tocm(0), tocm(5), tocm(0))
 
 # switch surface:
 # the incline magnitude
