@@ -39,7 +39,7 @@ import math
 #      |            :            :             |   align its coord origin  |
 #      | [0][0]     : [1][0]     : [2][0]      |  [3][0]                   |
 #      |            :            :             |   with the finger coord   |
-#      |            :            :             |        origin             |
+#      |   outer    :   middle   :  inner      |        origin             |
 #       -------------------------------------------------------------------
 
 
