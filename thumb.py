@@ -99,7 +99,6 @@ base0_length = tocm(58)
 adjust_xcoord_for_base = tocm(9)
 adjust_ycoord_for_base = tocm(22.5) - (base0_length / 2)
 adjust_xcoord_relative_to_fingers_section = tocm(19)
-xcoord_inner0 = inner_segment_width / 2 + tocm(45)
 adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
 ############################################
@@ -195,6 +194,7 @@ THUMB_INNER_SECTION_SETTINGS.append(inner0_settings)
 
 ############segment locations############### {{{3
 inner0 = THUMB_INNER_SECTION_SETTINGS[0]["base_dimensions"]
+xcoord_inner0 = inner_segment_width / 2 + tocm(45)
 # As you rotatate the segment, gaps appear. To avoid that, move segment into the base segment.
 inner0_adjust_xcoord_for_rotation = tocm(2)
 # adjust xcoord to position thumb section relative
