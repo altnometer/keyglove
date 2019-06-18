@@ -155,7 +155,7 @@ inner0_width = inner_segment_width
 # inner0_length = tocm(38)
 inner0_length = tocm(33)
 # inner0_length = tocm(28)
-inner0_hight = THUMB_SECTION_HIGHT + tocm(35)
+inner0_hight = THUMB_SECTION_HIGHT + tocm(26)
 
 # switch center
 inner0_switch_center = (tocm(0), tocm(5), tocm(0))
