@@ -226,8 +226,8 @@ middle0_switch_center = (tocm(-1), tocm(2), tocm(0))
 # switch surface:
 # the incline magnitude
 middle0_surf_low = middle0_hight
-middle0_surf_mdl = middle0_surf_low + tocm(10)
-middle0_surf_high = middle0_surf_low + tocm(14)
+middle0_surf_mdl = middle0_surf_low + tocm(12)
+middle0_surf_high = middle0_surf_low + tocm(17)
 
 # the incline direction
 # set three corners that would define surface angle.
