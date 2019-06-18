@@ -257,7 +257,7 @@ THUMB_MIDDLE_SECTION_SETTINGS.append(middle0_settings)
 
 ############segment locations############### {{{3
 middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
-middle0_xcoord = middle_segment_width / 2 + inner_segment_width / 2 + inner0_xcoord
+middle0_xcoord = -(middle_segment_width / 2 + inner_segment_width / 2) + inner0_xcoord
 # positive values move the segment to the right.
 middle0_adjust_xcoord_for_rotation = tocm(3)
 middle0_adjust_xcoord_for_width_change = tocm(2)
@@ -266,7 +266,7 @@ middle0_adjust_xcoord = middle0_adjust_xcoord_for_rotation +\
     middle0_adjust_xcoord_for_width_change
 middle0_ycoord_adjust = tocm(7) + adjust_ycoord_relative_to_fingers_section
 THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
-    -middle0_xcoord + middle0_adjust_xcoord,
+    middle0_xcoord + middle0_adjust_xcoord,
     tocm(0) - middle0_ycoord_adjust,
     tocm(0)
 )
