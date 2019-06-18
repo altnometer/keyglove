@@ -260,6 +260,8 @@ middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
 middle0_xcoord = -(middle_segment_width / 2 + inner_segment_width / 2) + inner0_xcoord
 # positive values move the segment to the right.
 middle0_adjust_xcoord_for_rotation = tocm(3)
+# any segment width change may displace the original xcoord, adjust for this
+# with this setting.
 middle0_adjust_xcoord_for_width_change = tocm(2)
 middle0_adjust_xcoord = middle0_adjust_xcoord_for_rotation +\
     adjust_xcoord_relative_to_fingers_section +\
