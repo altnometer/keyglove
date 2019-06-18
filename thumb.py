@@ -321,12 +321,12 @@ THUMB_OUTER_SECTION_SETTINGS.append(outer0_settings)
 
 ############segment locations############### {{{3
 outer0 = THUMB_OUTER_SECTION_SETTINGS[0]["base_dimensions"]
-outer0_xcoord = outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2 + inner0_xcoord
+outer0_xcoord = -(outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2) + inner0_xcoord
 outer0_adjust_xcoord_for_rotation = tocm(5)
 outer0_adjust_xcoord = outer0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 outer0_ycoord_adjust = tocm(10) + adjust_ycoord_relative_to_fingers_section
 THUMB_OUTER_SECTION_SETTINGS[0]["location"] = (
-    -outer0_xcoord + outer0_adjust_xcoord,
+    outer0_xcoord + outer0_adjust_xcoord,
     tocm(0) - outer0_ycoord_adjust,
     tocm(0)
 )
