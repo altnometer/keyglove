@@ -92,7 +92,7 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 ########################################################################## {{{
 outer_segment_width = tocm(24)
 middle_segment_width = tocm(23)
-inner_segment_width = tocm(20)
+inner_segment_width = tocm(16)
 base_segment_width = tocm(98)
 base0_length = tocm(58)
 # adjust_xcoord_relative_to_fingers_section = tocm(12)
@@ -194,7 +194,7 @@ THUMB_INNER_SECTION_SETTINGS.append(inner0_settings)
 
 ############segment locations############### {{{3
 inner0 = THUMB_INNER_SECTION_SETTINGS[0]["base_dimensions"]
-inner0_xcoord = -(inner_segment_width / 2 + tocm(45))
+inner0_xcoord = -(inner_segment_width / 2 + tocm(47))
 # As you rotatate the segment, gaps appear. To avoid that, move segment into the base segment.
 inner0_adjust_xcoord_for_rotation = tocm(2)
 # adjust xcoord to position thumb section relative
