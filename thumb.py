@@ -91,7 +91,7 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 ##################### thumb section settings #############################
 ########################################################################## {{{
 outer_segment_width = tocm(24)
-middle_segment_width = tocm(19)
+middle_segment_width = tocm(23)
 inner_segment_width = tocm(20)
 base_segment_width = tocm(98)
 base0_length = tocm(58)
