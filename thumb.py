@@ -194,7 +194,7 @@ THUMB_INNER_SECTION_SETTINGS.append(inner0_settings)
 
 ############segment locations############### {{{3
 inner0 = THUMB_INNER_SECTION_SETTINGS[0]["base_dimensions"]
-xcoord_inner0 = inner_segment_width / 2 + tocm(45)
+inner0_xcoord = inner_segment_width / 2 + tocm(45)
 # As you rotatate the segment, gaps appear. To avoid that, move segment into the base segment.
 inner0_adjust_xcoord_for_rotation = tocm(2)
 # adjust xcoord to position thumb section relative
@@ -202,7 +202,7 @@ inner0_adjust_xcoord_for_rotation = tocm(2)
 inner0_adjust_xcoord = inner0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 inner0_ycoord_adjust = tocm(5) + adjust_ycoord_relative_to_fingers_section
 THUMB_INNER_SECTION_SETTINGS[0]["location"] = (
-    -xcoord_inner0 + inner0_adjust_xcoord,
+    -inner0_xcoord + inner0_adjust_xcoord,
     tocm(0) - inner0_ycoord_adjust,
     tocm(0)
 )
@@ -257,7 +257,7 @@ THUMB_MIDDLE_SECTION_SETTINGS.append(middle0_settings)
 
 ############segment locations############### {{{3
 middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
-middle0_xcoord = middle_segment_width / 2 + inner_segment_width / 2 + xcoord_inner0
+middle0_xcoord = middle_segment_width / 2 + inner_segment_width / 2 + inner0_xcoord
 # positive values move the segment to the right.
 middle0_adjust_xcoord_for_rotation = tocm(3)
 middle0_adjust_xcoord_for_width_change = tocm(2)
@@ -321,7 +321,7 @@ THUMB_OUTER_SECTION_SETTINGS.append(outer0_settings)
 
 ############segment locations############### {{{3
 outer0 = THUMB_OUTER_SECTION_SETTINGS[0]["base_dimensions"]
-outer0_xcoord = outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2 + xcoord_inner0
+outer0_xcoord = outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2 + inner0_xcoord
 outer0_adjust_xcoord_for_rotation = tocm(5)
 outer0_adjust_xcoord = outer0_adjust_xcoord_for_rotation + adjust_xcoord_relative_to_fingers_section
 outer0_ycoord_adjust = tocm(10) + adjust_ycoord_relative_to_fingers_section
