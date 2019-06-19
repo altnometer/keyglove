@@ -255,7 +255,7 @@ INDEX_SECTION_SETTINGS[2]["location"] = (
 # base dimensions
 mdl0_width = mdl_row_width
 mdl0_length = tocm(22)
-mdl0_hight = tocm(11)
+mdl0_hight = tocm(12)
 
 # switch center
 mdl0_switch_center = (tocm(1.0), tocm(1.5), tocm(0))
