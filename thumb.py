@@ -163,15 +163,15 @@ inner0_switch_center = (tocm(0), tocm(5), tocm(0))
 # switch surface:
 # the incline magnitude
 inner0_surf_low = inner0_hight
-inner0_surf_mdl = inner0_surf_low + tocm(19)
-inner0_surf_high = inner0_surf_low + tocm(24)
+inner0_surf_mdl = inner0_surf_low + tocm(30)
+inner0_surf_high = inner0_surf_low + tocm(34)
 
 # the incline direction
 # set three corners that would define surface angle.
 inner0_top_surf_corners = {
-    "low": (-inner0_width / 2, inner0_length / 2, inner0_surf_low),
-    "mdl": (inner0_width / 2, inner0_length / 2, inner0_surf_mdl),
-    "high": (inner0_width / 2, -inner0_length / 2, inner0_surf_high),
+    "low": (-inner0_width / 2, -inner0_length / 2, inner0_surf_low),
+    "mdl": (inner0_width / 2, -inner0_length / 2, inner0_surf_mdl),
+    "high": (inner0_width / 2, inner0_length / 2, inner0_surf_high),
 }
 
 # use this for the rotation in the switch surface XY plane.
