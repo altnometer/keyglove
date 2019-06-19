@@ -695,10 +695,10 @@ RING_SECTION_SETTINGS[2]["location"] = (
 # base dimensions
 pinky0_width = pinky_row_width
 pinky0_length = tocm(24)
-pinky0_hight = tocm(18)
+pinky0_hight = tocm(19.4)
 
 # switch center
-pinky0_switch_center = (tocm(-1), tocm(-3), tocm(0))
+pinky0_switch_center = (tocm(-1), tocm(-5), tocm(0))
 
 # switch surface:
 pinky0_surf_low = pinky0_hight
