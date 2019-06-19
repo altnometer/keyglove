@@ -983,7 +983,9 @@ def run(context):  # {{{
         cut_off_at_base_back_level(rootComp, ui)
         # cut off the tip of the inner switch,
         # use only if it sticks out obove the base top surface
-        if inner0_surf_high > base0_hight:
+        # seems like under 1mm would raise a fusion360 error:
+        # 'no intersection to cut'
+        if (inner0_surf_high - base0_hight) > 1:
             cut_off_at_base_top_level(rootComp, ui)
         combine_with_base(rootComp, ui)
         shell(rootComp, ui)
