@@ -632,7 +632,7 @@ ring2_length = tocm(26)
 ring2_hight = tocm(7)
 
 # switch center will be transformed by these distances from base center
-ring2_switch_center = (tocm(-0.5), tocm(1.25), tocm(0))
+ring2_switch_center = (tocm(-0.5), tocm(0.75), tocm(0))
 
 # switch surface:
 # the incline magnitude
