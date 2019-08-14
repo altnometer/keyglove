@@ -107,7 +107,7 @@ adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
 # base dimensions
 base0_width = base_segment_width
-base0_hight = tocm(34)
+base0_hight = tocm(39)
 
 # top surface incline:
 base0_surf_low = base0_hight
