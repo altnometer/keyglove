@@ -479,7 +479,7 @@ indxpls2_length = tocm(23)
 indxpls2_hight = tocm(22)
 
 # switch center will be transformed by these distances from base center
-indxpls2_switch_center = (tocm(3), tocm(2), tocm(0))
+indxpls2_switch_center = (tocm(3), tocm(1.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
