@@ -629,7 +629,7 @@ RING_SECTION_SETTINGS.append(ring1_settings)
 # base dimensions
 ring2_width = ring_row_width
 ring2_length = tocm(26)
-ring2_hight = tocm(5)
+ring2_hight = tocm(6)
 
 # switch center will be transformed by these distances from base center
 ring2_switch_center = (tocm(-0.5), tocm(0.75), tocm(0))
