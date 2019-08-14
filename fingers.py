@@ -734,7 +734,7 @@ PINKY_SECTION_SETTINGS.append(pinky0_settings)
 # base dimensions
 pinky1_width = pinky_row_width
 pinky1_length = tocm(22)
-pinky1_hight = tocm(17)
+pinky1_hight = tocm(15)
 
 # switch center
 pinky1_switch_center = (tocm(-1), tocm(-2), tocm(0))
