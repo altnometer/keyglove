@@ -1270,14 +1270,14 @@ def run(context):  # {{{
                 # if segment_settings["name"] == "mdl1":
                 # if "indx" in segment_settings["name"]:
                 # if "mdl" in segment_settings["name"]:
-                    vector = adsk.core.Vector3D.create(*segment_settings["location"])
-                    transform = adsk.core.Matrix3D.create()
-                    transform.translation = vector
-                    # Create a component under root component
-                    occ = allOccs.addNewComponent(transform)
-                    subComp = occ.component
-                    # print(subComp.revisionId)
-                    add_finger_segment(subComp, segment_settings, ui)
+                vector = adsk.core.Vector3D.create(*segment_settings["location"])
+                transform = adsk.core.Matrix3D.create()
+                transform.translation = vector
+                # Create a component under root component
+                occ = allOccs.addNewComponent(transform)
+                subComp = occ.component
+                # print(subComp.revisionId)
+                add_finger_segment(subComp, segment_settings, ui)
         combine(rootComp, ui)
         # add_dove_tail(rootComp, ui)
         # offset(rootComp, ui)
