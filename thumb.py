@@ -177,7 +177,7 @@ inner0_top_surf_corners = {
 # positive values - anti clockwise
 # negative values - clockwise
 inner0_switch_rotation_angle_deg = 5
-inner0_body_rotation_angle_deg = 8
+inner0_body_rotation_angle_deg = 0
 
 # you do not need to touch these settings
 inner0_settings = {
