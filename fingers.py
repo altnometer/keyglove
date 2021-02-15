@@ -777,7 +777,7 @@ pinky2_length = tocm(24)
 pinky2_hight = tocm(8)
 
 # switch center will be transformed by these distances from base center
-pinky2_switch_center = (tocm(-1), tocm(-1.5), tocm(0))
+pinky2_switch_center = (tocm(-1), tocm(-2.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
