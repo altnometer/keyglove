@@ -3,14 +3,15 @@ import adsk.fusion
 import traceback
 import math
 
+# * segment visuals
+
 # !!! WE ARE WORKING ON XY PLANE AT THE BOTTOM
-#                                                               width
-#                                                                  ^
-#                                                                  |
+#                                                                 width
+#                                                                 <--->
 #                                                              _________
 #                   | z   / y                                 /        /|
-#                   |    /                    length ->      /        / |
-#                   |   /                                   /        /  | <- hight
+#                   |    /                          length   /        / |
+#                   |   /                                   /        /  |  hight
 #                   |  /                                   /________/   |
 #                   | /                                    |        |   |
 #    -x ____________|/____________                         |        |   /
@@ -21,7 +22,8 @@ import math
 #               /   |                                     finger segment
 #           -y /    | -z
 
-#
+# * section arrangement
+
 ##############################################################################
 #                      finger section
 #       ----------------------------------------------------------------
@@ -41,13 +43,14 @@ import math
 # coordinate origine (0, 0, 0) is the finger section center,
 # adjust finger segment locations accordingly.
 
+# * helper functions
 
 # convert to cm,
 # native fusion api value for dimensions is cm (10mm)
 def tocm(mm):
     return 0.1 * mm
 
-
+# * general settings
 ###################general settings####################################### {{{
 
 # all dimensions are in mm, convert to tocm() before using.
@@ -91,6 +94,8 @@ DOVE_TAIL_WIDTH_BASE = tocm(12)
 DOVE_TAIL_WIDTH_END = tocm(17)
 # }}}
 
+# * section settings
+
 ##########################################################################
 ##################### fingers section settings ###########################
 ########################################################################## {{{
@@ -100,8 +105,12 @@ mdl_row_width = tocm(20)
 ring_row_width = tocm(20)
 pinky_row_width = tocm(20)
 
+# * indx
+
 ############################################
 ################# indx ##################### {{{2
+
+# ** indx0
 
 ################# indx 0 ################### {{{3
 
@@ -143,6 +152,8 @@ indx0_settings = {
 INDEX_SECTION_SETTINGS.append(indx0_settings)
 ########################################## 3}}}
 
+# ** indx1
+
 ################# indx 1 ################### {{{3
 
 # base dimensions
@@ -182,6 +193,8 @@ indx1_settings = {
 }
 INDEX_SECTION_SETTINGS.append(indx1_settings)
 ############################################ 3}}}
+
+# ** indx2
 
 ################# indx 2 ################### {{{3
 
@@ -223,6 +236,8 @@ indx2_settings = {
 INDEX_SECTION_SETTINGS.append(indx2_settings)
 ########################################## 3}}}
 
+# ** indx segment locations
+
 ############segment locations############### {{{3
 indx0 = INDEX_SECTION_SETTINGS[0]["base_dimensions"]
 indx1 = INDEX_SECTION_SETTINGS[1]["base_dimensions"]
@@ -247,8 +262,12 @@ INDEX_SECTION_SETTINGS[2]["location"] = (
 
 ############################################ 2}}}
 
+# * mdl
+
 ############################################
 ################# mdl ###################### {{{2
+
+# ** mdl0
 
 ################# mdl 0 #################### {{{3
 
@@ -290,6 +309,8 @@ mdl0_settings = {
 MIDDLE_SECTION_SETTINGS.append(mdl0_settings)
 ########################################## 3}}}
 
+# ** mdl1
+
 ################# mdl 1 #################### {{{3
 
 # base dimensions
@@ -329,6 +350,8 @@ mdl1_settings = {
 }
 MIDDLE_SECTION_SETTINGS.append(mdl1_settings)
 ############################################ 3}}}
+
+# ** mdl2
 
 ################# mdl 2 #################### {{{3
 
@@ -370,6 +393,8 @@ mdl2_settings = {
 MIDDLE_SECTION_SETTINGS.append(mdl2_settings)
 ########################################## 3}}}
 
+# ** mdl segment locations
+
 ############segment locations############### {{{3
 mdl0 = MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
 mdl1 = MIDDLE_SECTION_SETTINGS[1]["base_dimensions"]
@@ -388,8 +413,12 @@ MIDDLE_SECTION_SETTINGS[2]["location"] = (
 ########################################## 3}}}
 ########################################## 2}}}
 
+# * indxpls
+
 ############################################
 ############## indx plus ################### {{{2
+
+# ** indxpls0
 
 ############## indxpls 0 ################# {{{3
 
@@ -431,6 +460,8 @@ indxpls0_settings = {
 INDEXPLUS_SECTION_SETTINGS.append(indxpls0_settings)
 ########################################## 3}}}
 
+# ** indxpls1
+
 ############## indxpls 1 ################# {{{3
 
 # base dimensions
@@ -470,6 +501,8 @@ indxpls1_settings = {
 }
 INDEXPLUS_SECTION_SETTINGS.append(indxpls1_settings)
 ############################################ 3}}}
+
+# ** indxpls2
 
 ############## indxpls 2 ################# {{{3
 
@@ -511,6 +544,8 @@ indxpls2_settings = {
 INDEXPLUS_SECTION_SETTINGS.append(indxpls2_settings)
 ########################################## 3}}}
 
+# ** indxpls segment location
+
 ############segment locations############### {{{3
 indxpls0 = INDEXPLUS_SECTION_SETTINGS[0]["base_dimensions"]
 indxpls1 = INDEXPLUS_SECTION_SETTINGS[1]["base_dimensions"]
@@ -542,8 +577,12 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 
 ############################################ 2}}}
 
+# * ring
+
 ############################################
 ################# ring ###################### {{{2
+
+# ** ring0
 
 ################# ring 0 #################### {{{3
 
@@ -583,6 +622,8 @@ ring0_settings = {
 }
 RING_SECTION_SETTINGS.append(ring0_settings)
 ########################################## 3}}}
+
+# ** ring1
 
 ################# ring 1 #################### {{{3
 
@@ -624,6 +665,8 @@ ring1_settings = {
 RING_SECTION_SETTINGS.append(ring1_settings)
 ############################################ 3}}}
 
+# ** ring2
+
 ################# ring 2 #################### {{{3
 
 # base dimensions
@@ -664,6 +707,8 @@ ring2_settings = {
 RING_SECTION_SETTINGS.append(ring2_settings)
 ########################################## 3}}}
 
+# ** ring segment locations
+
 ############segment locations############### {{{3
 ring0 = RING_SECTION_SETTINGS[0]["base_dimensions"]
 ring1 = RING_SECTION_SETTINGS[1]["base_dimensions"]
@@ -687,8 +732,12 @@ RING_SECTION_SETTINGS[2]["location"] = (
 ########################################## 3}}}
 ########################################## 2}}}
 
+# * pinky
+
 ############################################
 ################# pinky ###################### {{{2
+
+# ** pinky0
 
 ################# pinky 0 #################### {{{3
 
@@ -728,6 +777,8 @@ pinky0_settings = {
 }
 PINKY_SECTION_SETTINGS.append(pinky0_settings)
 ########################################## 3}}}
+
+# ** pinky1
 
 ################# pinky 1 #################### {{{3
 
@@ -769,6 +820,8 @@ pinky1_settings = {
 PINKY_SECTION_SETTINGS.append(pinky1_settings)
 ############################################ 3}}}
 
+# ** pinky2
+
 ################# pinky 2 #################### {{{3
 
 # base dimensions
@@ -809,6 +862,8 @@ pinky2_settings = {
 PINKY_SECTION_SETTINGS.append(pinky2_settings)
 ########################################## 3}}}
 
+# ** pinky segment locations
+
 ############segment locations############### {{{3
 pinky0 = PINKY_SECTION_SETTINGS[0]["base_dimensions"]
 pinky1 = PINKY_SECTION_SETTINGS[1]["base_dimensions"]
@@ -837,6 +892,8 @@ PINKY_SECTION_SETTINGS[2]["location"] = (
 
 ########################################### }}}
 
+
+# * functions
 
 def add_finger_segment(comp, settings, ui):  # {{{
     comp.name = settings["name"]
