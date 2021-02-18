@@ -99,7 +99,7 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 ##########################################################################
 ##################### fingers section settings ###########################
 ########################################################################## {{{
-indxpls_row_width = tocm(20)
+indxpls_width = tocm(20)
 indx_row_width = tocm(20)
 mdl_row_width = tocm(20)
 ring_row_width = tocm(20)
@@ -423,7 +423,7 @@ MIDDLE_SECTION_SETTINGS[2]["location"] = (
 ############## indxpls 0 ################# {{{3
 
 # base dimensions
-indxpls0_width = indxpls_row_width
+indxpls0_width = indxpls_width
 indxpls0_length = tocm(24)
 indxpls0_hight = tocm(27)
 
@@ -465,7 +465,7 @@ INDEXPLUS_SECTION_SETTINGS.append(indxpls0_settings)
 ############## indxpls 1 ################# {{{3
 
 # base dimensions
-indxpls1_width = indxpls_row_width
+indxpls1_width = indxpls_width
 indxpls1_length = tocm(20)
 indxpls1_hight = tocm(22)
 
@@ -507,7 +507,7 @@ INDEXPLUS_SECTION_SETTINGS.append(indxpls1_settings)
 ############## indxpls 2 ################# {{{3
 
 # base dimensions
-indxpls2_width = indxpls_row_width
+indxpls2_width = indxpls_width
 indxpls2_length = tocm(23)
 indxpls2_hight = tocm(22)
 
@@ -557,7 +557,7 @@ mdl2 = MIDDLE_SECTION_SETTINGS[2]["base_dimensions"]
 # we need to adjust the indxpls locations to align with the rest.
 indxpls_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (indxpls1["length"] / 2.0 + indxpls0["length"])
 
-xcoord = indxpls_row_width / 2 + indx_row_width + mdl_row_width / 2
+xcoord = indxpls_width / 2 + indx_row_width + mdl_row_width / 2
 INDEXPLUS_SECTION_SETTINGS[0]["location"] = (
     -xcoord,
     indxpls0["length"] / 2.0 + indxpls1["length"] / 2.0 + indxpls_ycoord_adjustment,
