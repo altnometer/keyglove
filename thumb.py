@@ -3,6 +3,8 @@ import adsk.fusion
 import traceback
 import math
 
+# * segment visuals
+
 # !!! WE ARE WORKING ON XY PLANE AT THE BOTTOM
 #
 #
@@ -32,6 +34,9 @@ import math
 #         /________|        |        |                             | /
 #         |________|________|________|_____________________________|/
 #
+
+# * segment indexes
+
 ##############################################################################
 #                      thumb section
 #       -------------------------------------------------------------------
@@ -43,11 +48,14 @@ import math
 #       -------------------------------------------------------------------
 
 
+# * helper functions
+
 # convert to cm,
 # native fusion api value for dimensions is cm (10mm)
 def tocm(mm):
     return 0.1 * mm
 
+# * general settings
 
 ################## general settings ###################################### {{{
 
@@ -87,6 +95,8 @@ DOVE_TAIL_WIDTH_BASE = tocm(12)
 DOVE_TAIL_WIDTH_END = tocm(17)
 ########################################################################## }}}
 
+# * section settings
+
 ##########################################################################
 ##################### thumb section settings #############################
 ########################################################################## {{{
@@ -100,8 +110,12 @@ adjust_ycoord_for_base = tocm(22.5) - (base0_length / 2)
 adjust_xcoord_relative_to_fingers_section = tocm(19)
 adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
+# * base
+
 ############################################
 ################# base ##################### {{{2
+
+# ** base 0
 
 ################# base 0 ################### {{{3
 
@@ -143,9 +157,12 @@ THUMB_BASE_SECTION_SETTINGS[0]["location"] = (
 
 ############################################ 2}}}
 
+# * inner
 
 ############################################
 ################# inner #################### {{{2
+
+# ** inner 0
 
 ################# inner 0 ################## {{{3
 
@@ -191,6 +208,8 @@ inner0_settings = {
 THUMB_INNER_SECTION_SETTINGS.append(inner0_settings)
 ########################################## 3}}}
 
+# ** inner segment locations
+
 ############segment locations############### {{{3
 inner0 = THUMB_INNER_SECTION_SETTINGS[0]["base_dimensions"]
 inner0_xcoord = -(inner_segment_width / 2 + tocm(41))
@@ -210,8 +229,12 @@ THUMB_INNER_SECTION_SETTINGS[0]["location"] = (
 
 ############################################ 2}}}
 
+# * middle
+
 ############################################
 ################# middle #################### {{{2
+
+# ** middle 0
 
 ################# middle 0 ################## {{{3
 
@@ -255,6 +278,8 @@ middle0_settings = {
 THUMB_MIDDLE_SECTION_SETTINGS.append(middle0_settings)
 ########################################## 3}}}
 
+# ** middle segment locations
+
 ############segment locations############### {{{3
 middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
 middle0_xcoord = -(middle_segment_width / 2 + inner_segment_width / 2) + inner0_xcoord
@@ -276,8 +301,12 @@ THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
 
 ############################################ 2}}}
 
+# * outer
+
 ############################################
 ################# outer #################### {{{2
+
+# ** outer 0
 
 ################# outer 0 ################## {{{3
 
@@ -321,6 +350,8 @@ outer0_settings = {
 THUMB_OUTER_SECTION_SETTINGS.append(outer0_settings)
 ########################################## 3}}}
 
+# ** outer segment locations
+
 ############segment locations############### {{{3
 outer0 = THUMB_OUTER_SECTION_SETTINGS[0]["base_dimensions"]
 outer0_xcoord = -(outer_segment_width / 2 + middle_segment_width + inner_segment_width / 2) + inner0_xcoord
@@ -343,6 +374,7 @@ THUMB_OUTER_SECTION_SETTINGS[0]["location"] = (
 
 ########################################### }}}
 
+# * functions
 
 def add_segment(comp, settings, ui):  # {{{
     comp.name = settings["name"]
