@@ -362,7 +362,8 @@ outer0_adjust_xcoord_for_width_change = tocm(2)
 outer0_adjust_xcoord = outer0_adjust_xcoord_for_rotation +\
     adjust_xcoord_relative_to_fingers_section +\
     outer0_adjust_xcoord_for_width_change
-outer0_ycoord_adjust = tocm(10) + adjust_ycoord_relative_to_fingers_section
+# increase to move away from finger section
+outer0_ycoord_adjust = tocm(5) + adjust_ycoord_relative_to_fingers_section
 THUMB_OUTER_SECTION_SETTINGS[0]["location"] = (
     outer0_xcoord + outer0_adjust_xcoord,
     tocm(0) - outer0_ycoord_adjust,
