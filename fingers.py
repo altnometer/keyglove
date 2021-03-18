@@ -22,7 +22,7 @@ import math
 #               /   |                                     finger segment
 #           -y /    | -z
 
-# * section arrangement
+# * segment indexes
 
 ##############################################################################
 #                      finger section
