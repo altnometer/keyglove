@@ -508,17 +508,17 @@ INDEXPLUS_SECTION_SETTINGS.append(indxpls1_settings)
 
 # base dimensions
 indxpls2_width = indxpls_width
-indxpls2_length = tocm(23)
+indxpls2_length = tocm(19)
 indxpls2_hight = tocm(22)
 
 # switch center will be transformed by these distances from base center
-indxpls2_switch_center = (tocm(3), tocm(1.5), tocm(0))
+indxpls2_switch_center = (tocm(3), tocm(-0.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indxpls2_surf_low = indxpls2_hight
 indxpls2_surf_mdl = indxpls2_surf_low + tocm(15)
-indxpls2_surf_high = indxpls2_surf_low + tocm(19)
+indxpls2_surf_high = indxpls2_surf_low + tocm(18)
 
 # the incline direction
 # set three corners that would define surface angle.
