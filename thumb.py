@@ -313,7 +313,7 @@ THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
 # base dimensions
 outer0_width = outer_segment_width
 outer0_length = tocm(32)
-outer0_hight = THUMB_SECTION_HIGHT + tocm(30)
+outer0_hight = THUMB_SECTION_HIGHT + tocm(32)
 
 # switch center
 outer0_switch_center = (tocm(-1), tocm(5), tocm(0))
