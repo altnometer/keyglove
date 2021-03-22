@@ -100,11 +100,163 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 ##########################################################################
 ##################### fingers section settings ###########################
 ########################################################################## {{{
-indxpls_width = tocm(20)
-indx_row_width = tocm(20)
 mdl_row_width = tocm(20)
+indx_row_width = tocm(20)
+indxpls_width = tocm(20)
 ring_row_width = tocm(20)
 pinky_row_width = tocm(20)
+
+
+# * mdl
+
+############################################
+################# mdl ###################### {{{2
+
+# ** mdl0
+
+################# mdl 0 #################### {{{3
+
+# base dimensions
+mdl0_width = mdl_row_width
+mdl0_length = tocm(22)
+mdl0_hight = tocm(12)
+
+# switch center
+mdl0_switch_center = (tocm(1.0), tocm(1.5), tocm(0))
+
+# switch surface:
+# the incline magnitude
+mdl0_surf_low = mdl0_hight
+mdl0_surf_mdl = mdl0_surf_low + tocm(2)
+mdl0_surf_high = mdl0_surf_low + tocm(10.5)
+
+# the incline direction
+# set three corners that would define surface angle.
+mdl0_top_surf_corners = {
+    "low": (mdl0_width / 2, -mdl0_length / 2, mdl0_surf_low),
+    "mdl": (-mdl0_width / 2, -mdl0_length / 2, mdl0_surf_mdl),
+    "high": (-mdl0_width / 2, mdl0_length / 2, mdl0_surf_high),
+}
+
+# use this for the rotation in the switch surface XY plane.
+# positive values - anti clockwise
+# negative values - clockwise
+mdl0_switch_rotation_angle_deg = 0.5
+
+# you do not need to touch these settings
+mdl0_settings = {
+    "name": "mdl0",
+    "base_dimensions": {"width": mdl0_width, "length": mdl0_length, "hight": mdl0_hight},
+    "switch_center": mdl0_switch_center,
+    "top_surf_conners": mdl0_top_surf_corners,
+    "switch_rotation_angle": mdl0_switch_rotation_angle_deg * math.pi / 180,
+}
+MIDDLE_SECTION_SETTINGS.append(mdl0_settings)
+########################################## 3}}}
+
+# ** mdl1
+
+################# mdl 1 #################### {{{3
+
+# base dimensions
+mdl1_width = mdl_row_width
+mdl1_length = tocm(19)
+mdl1_hight = tocm(10)
+
+# switch center
+mdl1_switch_center = (tocm(0), tocm(0.25), tocm(0))
+
+# switch surface:
+# the incline magnitude
+mdl1_surf_low = mdl1_hight
+mdl1_surf_mdl = mdl1_surf_low + tocm(1)
+mdl1_surf_high = mdl1_surf_low + tocm(4)
+
+# the incline direction
+# set three corners that would define surface angle.
+mdl1_top_surf_corners = {
+    "low": (mdl1_width / 2, mdl1_length / 2, mdl1_surf_low),
+    "mdl": (mdl1_width / 2, -mdl1_length / 2, mdl1_surf_mdl),
+    "high": (-mdl1_width / 2, -mdl1_length / 2, mdl1_surf_high),
+}
+
+# use this for the rotation in the switch surface XY plane.
+# positive values - anti clockwise
+# negative values - clockwise
+mdl1_switch_rotation_angle_deg = -2
+
+# you do not need to touch these settings
+mdl1_settings = {
+    "name": "mdl1",
+    "base_dimensions": {"width": mdl1_width, "length": mdl1_length, "hight": mdl1_hight},
+    "switch_center": mdl1_switch_center,
+    "top_surf_conners": mdl1_top_surf_corners,
+    "switch_rotation_angle": mdl1_switch_rotation_angle_deg * math.pi / 180,
+}
+MIDDLE_SECTION_SETTINGS.append(mdl1_settings)
+############################################ 3}}}
+
+# ** mdl2
+
+################# mdl 2 #################### {{{3
+
+# base dimensions
+mdl2_width = mdl_row_width
+mdl2_length = tocm(26)
+mdl2_hight = tocm(7)
+
+# switch center will be transformed by these distances from base center
+mdl2_switch_center = (tocm(-0.25), tocm(2), tocm(0))
+
+# switch surface:
+# the incline magnitude
+mdl2_surf_low = mdl2_hight
+mdl2_surf_mdl = mdl2_surf_low + tocm(1.5)
+mdl2_surf_high = mdl2_surf_low + tocm(10)
+
+# the incline direction
+# set three corners that would define surface angle.
+mdl2_top_surf_corners = {
+    "low": (mdl2_width / 2, mdl2_length / 2, mdl2_surf_low),
+    "mdl": (-mdl2_width / 2, mdl2_length / 2, mdl2_surf_mdl),
+    "high": (-mdl2_width / 2, -mdl2_length / 2, mdl2_surf_high),
+}
+
+# use this for the rotation in the switch surface XY plane.
+# positive values - anti clockwise
+# negative values - clockwise
+mdl2_switch_rotation_angle_deg = -3.0
+
+# you do not need to touch these settings
+mdl2_settings = {
+    "name": "mdl2",
+    "base_dimensions": {"width": mdl2_width, "length": mdl2_length, "hight": mdl2_hight},
+    "switch_center": mdl2_switch_center,
+    "top_surf_conners": mdl2_top_surf_corners,
+    "switch_rotation_angle": mdl2_switch_rotation_angle_deg * math.pi / 180,
+}
+MIDDLE_SECTION_SETTINGS.append(mdl2_settings)
+########################################## 3}}}
+
+# ** mdl segment locations
+
+############segment locations############### {{{3
+mdl0 = MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
+mdl1 = MIDDLE_SECTION_SETTINGS[1]["base_dimensions"]
+mdl2 = MIDDLE_SECTION_SETTINGS[2]["base_dimensions"]
+MIDDLE_SECTION_SETTINGS[0]["location"] = (
+    tocm(0),
+    mdl0["length"] / 2.0 + mdl1["length"] / 2.0,
+    tocm(0)
+)
+MIDDLE_SECTION_SETTINGS[1]["location"] = ()
+MIDDLE_SECTION_SETTINGS[2]["location"] = (
+    tocm(0),
+    -(mdl2["length"] / 2.0 + mdl1["length"] / 2.0),
+    tocm(0)
+)
+########################################## 3}}}
+########################################## 2}}}
 
 # * indx
 
@@ -262,157 +414,6 @@ INDEX_SECTION_SETTINGS[2]["location"] = (
 ########################################## 3}}}
 
 ############################################ 2}}}
-
-# * mdl
-
-############################################
-################# mdl ###################### {{{2
-
-# ** mdl0
-
-################# mdl 0 #################### {{{3
-
-# base dimensions
-mdl0_width = mdl_row_width
-mdl0_length = tocm(22)
-mdl0_hight = tocm(12)
-
-# switch center
-mdl0_switch_center = (tocm(1.0), tocm(1.5), tocm(0))
-
-# switch surface:
-# the incline magnitude
-mdl0_surf_low = mdl0_hight
-mdl0_surf_mdl = mdl0_surf_low + tocm(2)
-mdl0_surf_high = mdl0_surf_low + tocm(10.5)
-
-# the incline direction
-# set three corners that would define surface angle.
-mdl0_top_surf_corners = {
-    "low": (mdl0_width / 2, -mdl0_length / 2, mdl0_surf_low),
-    "mdl": (-mdl0_width / 2, -mdl0_length / 2, mdl0_surf_mdl),
-    "high": (-mdl0_width / 2, mdl0_length / 2, mdl0_surf_high),
-}
-
-# use this for the rotation in the switch surface XY plane.
-# positive values - anti clockwise
-# negative values - clockwise
-mdl0_switch_rotation_angle_deg = 0.5
-
-# you do not need to touch these settings
-mdl0_settings = {
-    "name": "mdl0",
-    "base_dimensions": {"width": mdl0_width, "length": mdl0_length, "hight": mdl0_hight},
-    "switch_center": mdl0_switch_center,
-    "top_surf_conners": mdl0_top_surf_corners,
-    "switch_rotation_angle": mdl0_switch_rotation_angle_deg * math.pi / 180,
-}
-MIDDLE_SECTION_SETTINGS.append(mdl0_settings)
-########################################## 3}}}
-
-# ** mdl1
-
-################# mdl 1 #################### {{{3
-
-# base dimensions
-mdl1_width = mdl_row_width
-mdl1_length = tocm(19)
-mdl1_hight = tocm(10)
-
-# switch center
-mdl1_switch_center = (tocm(0), tocm(0.25), tocm(0))
-
-# switch surface:
-# the incline magnitude
-mdl1_surf_low = mdl1_hight
-mdl1_surf_mdl = mdl1_surf_low + tocm(1)
-mdl1_surf_high = mdl1_surf_low + tocm(4)
-
-# the incline direction
-# set three corners that would define surface angle.
-mdl1_top_surf_corners = {
-    "low": (mdl1_width / 2, mdl1_length / 2, mdl1_surf_low),
-    "mdl": (mdl1_width / 2, -mdl1_length / 2, mdl1_surf_mdl),
-    "high": (-mdl1_width / 2, -mdl1_length / 2, mdl1_surf_high),
-}
-
-# use this for the rotation in the switch surface XY plane.
-# positive values - anti clockwise
-# negative values - clockwise
-mdl1_switch_rotation_angle_deg = -2
-
-# you do not need to touch these settings
-mdl1_settings = {
-    "name": "mdl1",
-    "base_dimensions": {"width": mdl1_width, "length": mdl1_length, "hight": mdl1_hight},
-    "switch_center": mdl1_switch_center,
-    "top_surf_conners": mdl1_top_surf_corners,
-    "switch_rotation_angle": mdl1_switch_rotation_angle_deg * math.pi / 180,
-}
-MIDDLE_SECTION_SETTINGS.append(mdl1_settings)
-############################################ 3}}}
-
-# ** mdl2
-
-################# mdl 2 #################### {{{3
-
-# base dimensions
-mdl2_width = mdl_row_width
-mdl2_length = tocm(26)
-mdl2_hight = tocm(7)
-
-# switch center will be transformed by these distances from base center
-mdl2_switch_center = (tocm(-0.25), tocm(2), tocm(0))
-
-# switch surface:
-# the incline magnitude
-mdl2_surf_low = mdl2_hight
-mdl2_surf_mdl = mdl2_surf_low + tocm(1.5)
-mdl2_surf_high = mdl2_surf_low + tocm(10)
-
-# the incline direction
-# set three corners that would define surface angle.
-mdl2_top_surf_corners = {
-    "low": (mdl2_width / 2, mdl2_length / 2, mdl2_surf_low),
-    "mdl": (-mdl2_width / 2, mdl2_length / 2, mdl2_surf_mdl),
-    "high": (-mdl2_width / 2, -mdl2_length / 2, mdl2_surf_high),
-}
-
-# use this for the rotation in the switch surface XY plane.
-# positive values - anti clockwise
-# negative values - clockwise
-mdl2_switch_rotation_angle_deg = -3.0
-
-# you do not need to touch these settings
-mdl2_settings = {
-    "name": "mdl2",
-    "base_dimensions": {"width": mdl2_width, "length": mdl2_length, "hight": mdl2_hight},
-    "switch_center": mdl2_switch_center,
-    "top_surf_conners": mdl2_top_surf_corners,
-    "switch_rotation_angle": mdl2_switch_rotation_angle_deg * math.pi / 180,
-}
-MIDDLE_SECTION_SETTINGS.append(mdl2_settings)
-########################################## 3}}}
-
-# ** mdl segment locations
-
-############segment locations############### {{{3
-mdl0 = MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
-mdl1 = MIDDLE_SECTION_SETTINGS[1]["base_dimensions"]
-mdl2 = MIDDLE_SECTION_SETTINGS[2]["base_dimensions"]
-MIDDLE_SECTION_SETTINGS[0]["location"] = (
-    tocm(0),
-    mdl0["length"] / 2.0 + mdl1["length"] / 2.0,
-    tocm(0)
-)
-MIDDLE_SECTION_SETTINGS[1]["location"] = ()
-MIDDLE_SECTION_SETTINGS[2]["location"] = (
-    tocm(0),
-    -(mdl2["length"] / 2.0 + mdl1["length"] / 2.0),
-    tocm(0)
-)
-########################################## 3}}}
-########################################## 2}}}
 
 # * indxpls
 
