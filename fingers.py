@@ -163,7 +163,7 @@ mdl1_width = mdl_row_width
 mdl1_length = tocm(19)
 mdl1_hight = tocm(10)
 
-# switch center
+# switch center: move away from geometric center by these values
 mdl1_switch_center = (tocm(0), tocm(0.25), tocm(0))
 
 # switch surface:
@@ -272,7 +272,7 @@ indx0_width = indx_row_width
 indx0_length = tocm(22)
 indx0_hight = tocm(19)
 
-# switch center
+# switch center: move away from geometric center by these values
 indx0_switch_center = (tocm(2), tocm(-1), tocm(0))
 
 # switch surface:
@@ -314,7 +314,7 @@ indx1_width = indx_row_width
 indx1_length = tocm(19)
 indx1_hight = tocm(14)
 
-# switch center
+# switch center: move away from geometric center by these values
 indx1_switch_center = (tocm(0), tocm(-0.75), tocm(0))
 
 # switch surface:
@@ -429,7 +429,7 @@ indxpls0_width = indxpls_width
 indxpls0_length = tocm(24)
 indxpls0_hight = tocm(27)
 
-# switch center
+# switch center: move away from geometric center by these values
 indxpls0_switch_center = (tocm(3), tocm(-2.5), tocm(0))
 
 # switch surface:
@@ -471,7 +471,7 @@ indxpls1_width = indxpls_width
 indxpls1_length = tocm(20)
 indxpls1_hight = tocm(22)
 
-# switch center
+# switch center: move away from geometric center by these values
 indxpls1_switch_center = (tocm(2), tocm(0), tocm(0))
 
 # switch surface:
@@ -634,7 +634,7 @@ ring1_width = ring_row_width
 ring1_length = tocm(19)
 ring1_hight = tocm(8)
 
-# switch center
+# switch center: move away from geometric center by these values
 ring1_switch_center = (tocm(-0.25), tocm(-1), tocm(0))
 
 # switch surface:
@@ -749,7 +749,7 @@ pinky0_width = pinky_row_width
 pinky0_length = tocm(24)
 pinky0_hight = tocm(19.4)
 
-# switch center
+# switch center: move away from geometric center by these values
 pinky0_switch_center = (tocm(-1), tocm(-5), tocm(0))
 
 # switch surface:
@@ -790,7 +790,7 @@ pinky1_width = pinky_row_width
 pinky1_length = tocm(22)
 pinky1_hight = tocm(15)
 
-# switch center
+# switch center: move away from geometric center by these values
 pinky1_switch_center = (tocm(-1), tocm(-2), tocm(0))
 
 # switch surface:
