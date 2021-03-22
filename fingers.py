@@ -6,20 +6,20 @@ import math
 # * segment visuals
 
 # !!! WE ARE WORKING ON XY PLANE AT THE BOTTOM
-#                                                                 width
-#                                                                 <--->
-#                                                              _________
-#                   | z   / y                                 /        /|
-#                   |    /                          length   /        / |
-#                   |   /                                   /        /  |  hight
-#                   |  /                                   /________/   |
-#                   | /                                    |        |   |
-#    -x ____________|/____________                         |        |   /
-#                   |             x                        |        |  /
-#                  /|                                      |        | /
-#                 / |                                      |________|/
+#                                                        width
+#                                                        <--->
+#                                                     _________
+#                   | z   / y                        /        /|
+#                   |    /                 length   /        / |
+#                   |   /                          /        /  |  hight
+#                   |  /                          /________/   |
+#                   | /                           |        |   |
+#    -x ____________|/____________                |        |   /
+#                   |             x               |        |  /
+#                  /|                             |        | /
+#                 / |                             |________|/
 #                /  |
-#               /   |                                     finger segment
+#               /   |                          finger segment
 #           -y /    | -z
 
 # * segment indexes
@@ -44,6 +44,7 @@ import math
 # adjust finger segment locations accordingly.
 
 # * helper functions
+
 
 # convert to cm,
 # native fusion api value for dimensions is cm (10mm)
