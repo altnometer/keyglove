@@ -588,7 +588,7 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 ################# ring 0 #################### {{{3
 
 # base dimensions
-ring0_width = ring_row_width
+ring0_width = ring_row_width - 1
 ring0_length = tocm(22)
 ring0_hight = tocm(13)
 
@@ -700,7 +700,9 @@ ring2_switch_rotation_angle_deg = -3.5
 # you do not need to touch these settings
 ring2_settings = {
     "name": "ring2",
-    "base_dimensions": {"width": ring2_width, "length": ring2_length, "hight": ring2_hight},
+    "base_dimensions": {"width": ring2_width,
+                        "length": ring2_length,
+                        "hight": ring2_hight},
     "switch_center": ring2_switch_center,
     "top_surf_conners": ring2_top_surf_corners,
     "switch_rotation_angle": ring2_switch_rotation_angle_deg * math.pi / 180,
@@ -714,19 +716,18 @@ RING_SECTION_SETTINGS.append(ring2_settings)
 ring0 = RING_SECTION_SETTINGS[0]["base_dimensions"]
 ring1 = RING_SECTION_SETTINGS[1]["base_dimensions"]
 ring2 = RING_SECTION_SETTINGS[2]["base_dimensions"]
-xcoord = ring_row_width / 2 + mdl_row_width / 2
 RING_SECTION_SETTINGS[0]["location"] = (
-    xcoord,
+    ring0["width"] / 2 + mdl0["width"] / 2,
     ring0["length"] / 2.0 + ring1["length"] / 2.0,
     tocm(0)
 )
 RING_SECTION_SETTINGS[1]["location"] = (
-    xcoord,
+    ring1["width"] / 2 + mdl1["width"] / 2,
     tocm(0),
     tocm(0),
 )
 RING_SECTION_SETTINGS[2]["location"] = (
-    xcoord,
+    ring2["width"] / 2 + mdl2["width"] / 2,
     -(ring2["length"] / 2.0 + ring1["length"] / 2.0),
     tocm(0)
 )
