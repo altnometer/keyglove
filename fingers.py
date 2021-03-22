@@ -395,19 +395,18 @@ INDEX_SECTION_SETTINGS.append(indx2_settings)
 indx0 = INDEX_SECTION_SETTINGS[0]["base_dimensions"]
 indx1 = INDEX_SECTION_SETTINGS[1]["base_dimensions"]
 indx2 = INDEX_SECTION_SETTINGS[2]["base_dimensions"]
-xcoord = indx_row_width / 2 + mdl_row_width / 2
 INDEX_SECTION_SETTINGS[0]["location"] = (
-    -xcoord,
+    -(indx0["width"] / 2 + mdl0["width"] / 2),
     indx0["length"] / 2.0 + indx1["length"] / 2.0,
     tocm(0)
 )
 INDEX_SECTION_SETTINGS[1]["location"] = (
-    -xcoord,
+    -(indx1["width"] / 2 + mdl1["width"] / 2),
     tocm(0),
     tocm(0)
 )
 INDEX_SECTION_SETTINGS[2]["location"] = (
-    -xcoord,
+    -(indx2["width"] / 2 + mdl2["width"] / 2),
     -(indx2["length"] / 2.0 + indx1["length"] / 2.0),
     tocm(0)
 )
