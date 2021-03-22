@@ -593,8 +593,8 @@ ring0_width = ring_row_width - 1
 ring0_length = tocm(22)
 ring0_hight = tocm(13)
 
-# switch center
-ring0_switch_center = (tocm(-0.25), tocm(-0.5), tocm(0))
+# switch center: move away from geometric center by these values
+ring0_switch_center = (tocm(-0.75), tocm(-0.5), tocm(0))
 
 # switch surface:
 ring0_surf_low = ring0_hight
