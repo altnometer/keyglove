@@ -551,26 +551,23 @@ INDEXPLUS_SECTION_SETTINGS.append(indxpls2_settings)
 indxpls0 = INDEXPLUS_SECTION_SETTINGS[0]["base_dimensions"]
 indxpls1 = INDEXPLUS_SECTION_SETTINGS[1]["base_dimensions"]
 indxpls2 = INDEXPLUS_SECTION_SETTINGS[2]["base_dimensions"]
-mdl0 = MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
-mdl1 = MIDDLE_SECTION_SETTINGS[1]["base_dimensions"]
-mdl2 = MIDDLE_SECTION_SETTINGS[2]["base_dimensions"]
 # the finger section is centered at mdl1 center,
 # we need to adjust the indxpls locations to align with the rest.
 indxpls_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (indxpls1["length"] / 2.0 + indxpls0["length"])
 
 xcoord = indxpls_width / 2 + indx_row_width + mdl_row_width / 2
 INDEXPLUS_SECTION_SETTINGS[0]["location"] = (
-    -xcoord,
+    -(indxpls0["width"] / 2 + indx0["width"] + mdl0["width"] / 2),
     indxpls0["length"] / 2.0 + indxpls1["length"] / 2.0 + indxpls_ycoord_adjustment,
     tocm(0)
 )
 INDEXPLUS_SECTION_SETTINGS[1]["location"] = (
-    -xcoord,
+    -(indxpls1["width"] / 2 + indx1["width"] + mdl1["width"] / 2),
     tocm(0) + indxpls_ycoord_adjustment,
     tocm(0)
 )
 INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
-    -xcoord,
+    -(indxpls2["width"] / 2 + indx2["width"] + mdl2["width"] / 2),
     -(indxpls2["length"] / 2.0 + indxpls1["length"] / 2.0) + indxpls_ycoord_adjustment,
     tocm(0)
 )
