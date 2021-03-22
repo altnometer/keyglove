@@ -554,8 +554,6 @@ indxpls2 = INDEXPLUS_SECTION_SETTINGS[2]["base_dimensions"]
 # the finger section is centered at mdl1 center,
 # we need to adjust the indxpls locations to align with the rest.
 indxpls_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (indxpls1["length"] / 2.0 + indxpls0["length"])
-
-xcoord = indxpls_width / 2 + indx_row_width + mdl_row_width / 2
 INDEXPLUS_SECTION_SETTINGS[0]["location"] = (
     -(indxpls0["width"] / 2 + indx0["width"] + mdl0["width"] / 2),
     indxpls0["length"] / 2.0 + indxpls1["length"] / 2.0 + indxpls_ycoord_adjustment,
@@ -867,22 +865,21 @@ PINKY_SECTION_SETTINGS.append(pinky2_settings)
 pinky0 = PINKY_SECTION_SETTINGS[0]["base_dimensions"]
 pinky1 = PINKY_SECTION_SETTINGS[1]["base_dimensions"]
 pinky2 = PINKY_SECTION_SETTINGS[2]["base_dimensions"]
-xcoord = pinky_row_width / 2 + ring_row_width + mdl_row_width / 2
 # the finger section is centered at mdl1 center,
 # we need to adjust the ycoord locations to align with the rest.
 pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky1["length"] / 2.0 + pinky0["length"]) - tocm(7)
 PINKY_SECTION_SETTINGS[0]["location"] = (
-    xcoord,
+    pinky0["width"] / 2 + ring0["width"] + mdl0["width"] / 2,
     pinky0["length"] / 2.0 + pinky1["length"] / 2.0 + pinky_ycoord_adjustment,
     tocm(0)
 )
 PINKY_SECTION_SETTINGS[1]["location"] = (
-    xcoord,
+    pinky1["width"] / 2 + ring1["width"] + mdl1["width"] / 2,
     tocm(0) + pinky_ycoord_adjustment,
     tocm(0),
 )
 PINKY_SECTION_SETTINGS[2]["location"] = (
-    xcoord,
+    pinky0["width"] / 2 + ring0["width"] + mdl0["width"] / 2,
     -(pinky2["length"] / 2.0 + pinky1["length"] / 2.0) + pinky_ycoord_adjustment,
     tocm(0)
 )
