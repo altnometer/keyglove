@@ -740,17 +740,16 @@ RING_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 pinky0_width = pinky_row_width
-pinky0_length = tocm(16)
-pinky0_hight = tocm(19.4)
+pinky0_length = tocm(18)
 pinky0_hight = tocm(20.4)
 
 # switch center: move away from geometric center by these values
-pinky0_switch_center = (tocm(-1), tocm(-1), tocm(0))
+pinky0_switch_center = (tocm(-1), tocm(-1.5), tocm(0))
 
 # switch surface:
 pinky0_surf_low = pinky0_hight
-pinky0_surf_mdl = pinky0_surf_low + tocm(10)
-pinky0_surf_high = pinky0_surf_low + tocm(10)
+pinky0_surf_mdl = pinky0_surf_low + tocm(11.25)
+pinky0_surf_high = pinky0_surf_low + tocm(11.25)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -868,7 +867,7 @@ pinky1 = PINKY_SECTION_SETTINGS[1]["base_dimensions"]
 pinky2 = PINKY_SECTION_SETTINGS[2]["base_dimensions"]
 # the finger section is centered at mdl1 center,
 # we need to adjust the ycoord locations to align with the rest.
-pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky1["length"] / 2.0 + pinky0["length"]) - tocm(7)
+pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky1["length"] / 2.0 + pinky0["length"]) - tocm(13)
 PINKY_SECTION_SETTINGS[0]["location"] = (
     pinky0["width"] / 2 + ring0["width"] + mdl0["width"] / 2,
     pinky0["length"] / 2.0 + pinky1["length"] / 2.0 + pinky_ycoord_adjustment,
