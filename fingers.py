@@ -117,7 +117,7 @@ pinky_row_width = tocm(20)
 ################# mdl 0 #################### {{{3
 
 # base dimensions
-mdl0_width = mdl_row_width + 1
+mdl0_width = mdl_row_width + tocm(1)
 mdl0_length = tocm(22)
 mdl0_hight = tocm(12)
 
@@ -245,15 +245,19 @@ mdl0 = MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
 mdl1 = MIDDLE_SECTION_SETTINGS[1]["base_dimensions"]
 mdl2 = MIDDLE_SECTION_SETTINGS[2]["base_dimensions"]
 MIDDLE_SECTION_SETTINGS[0]["location"] = (
-    tocm(0),
+    # increase xcoord to shift it to the right
+    tocm(0.5),
     mdl0["length"] / 2.0 + mdl1["length"] / 2.0,
-    tocm(0)
+    tocm(0.0)
 )
-MIDDLE_SECTION_SETTINGS[1]["location"] = ()
+MIDDLE_SECTION_SETTINGS[1]["location"] = (
+    tocm(0.0),
+    tocm(0.0),
+    tocm(0.0))
 MIDDLE_SECTION_SETTINGS[2]["location"] = (
-    tocm(0),
+    tocm(0.0),
     -(mdl2["length"] / 2.0 + mdl1["length"] / 2.0),
-    tocm(0)
+    tocm(0.0)
 )
 ########################################## 3}}}
 ########################################## 2}}}
@@ -583,7 +587,7 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 ################# ring 0 #################### {{{3
 
 # base dimensions
-ring0_width = ring_row_width - 1
+ring0_width = ring_row_width - tocm(1)
 ring0_length = tocm(22)
 ring0_hight = tocm(13)
 
