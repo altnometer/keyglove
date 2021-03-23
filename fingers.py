@@ -400,17 +400,17 @@ indx0 = INDEX_SECTION_SETTINGS[0]["base_dimensions"]
 indx1 = INDEX_SECTION_SETTINGS[1]["base_dimensions"]
 indx2 = INDEX_SECTION_SETTINGS[2]["base_dimensions"]
 INDEX_SECTION_SETTINGS[0]["location"] = (
-    -(indx0["width"] / 2 + mdl0["width"] / 2),
+    -(indx0["width"] / 2.0 + mdl0["width"] / 2.0) + MIDDLE_SECTION_SETTINGS[0]["location"][0],
     indx0["length"] / 2.0 + indx1["length"] / 2.0,
     tocm(0)
 )
 INDEX_SECTION_SETTINGS[1]["location"] = (
-    -(indx1["width"] / 2 + mdl1["width"] / 2),
+    -(indx1["width"] / 2.0 + mdl1["width"] / 2.0) + MIDDLE_SECTION_SETTINGS[1]["location"][0],
     tocm(0),
     tocm(0)
 )
 INDEX_SECTION_SETTINGS[2]["location"] = (
-    -(indx2["width"] / 2 + mdl2["width"] / 2),
+    -(indx2["width"] / 2.0 + mdl2["width"] / 2.0) + MIDDLE_SECTION_SETTINGS[2]["location"][0],
     -(indx2["length"] / 2.0 + indx1["length"] / 2.0),
     tocm(0)
 )
@@ -559,17 +559,17 @@ indxpls2 = INDEXPLUS_SECTION_SETTINGS[2]["base_dimensions"]
 # we need to adjust the indxpls locations to align with the rest.
 indxpls_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (indxpls1["length"] / 2.0 + indxpls0["length"])
 INDEXPLUS_SECTION_SETTINGS[0]["location"] = (
-    -(indxpls0["width"] / 2 + indx0["width"] + mdl0["width"] / 2),
+    -(indxpls0["width"] / 2.0 + indx0["width"] / 2.0) + INDEX_SECTION_SETTINGS[0]["location"][0],
     indxpls0["length"] / 2.0 + indxpls1["length"] / 2.0 + indxpls_ycoord_adjustment,
     tocm(0)
 )
 INDEXPLUS_SECTION_SETTINGS[1]["location"] = (
-    -(indxpls1["width"] / 2 + indx1["width"] + mdl1["width"] / 2),
+    -(indxpls1["width"] / 2.0 + indx1["width"] / 2.0) + INDEX_SECTION_SETTINGS[1]["location"][0],
     tocm(0) + indxpls_ycoord_adjustment,
     tocm(0)
 )
 INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
-    -(indxpls2["width"] / 2 + indx2["width"] + mdl2["width"] / 2),
+    -(indxpls2["width"] / 2.0 + indx2["width"] / 2.0) + INDEX_SECTION_SETTINGS[2]["location"][0],
     -(indxpls2["length"] / 2.0 + indxpls1["length"] / 2.0) + indxpls_ycoord_adjustment,
     tocm(0)
 )
@@ -716,17 +716,17 @@ ring0 = RING_SECTION_SETTINGS[0]["base_dimensions"]
 ring1 = RING_SECTION_SETTINGS[1]["base_dimensions"]
 ring2 = RING_SECTION_SETTINGS[2]["base_dimensions"]
 RING_SECTION_SETTINGS[0]["location"] = (
-    ring0["width"] / 2 + mdl0["width"] / 2,
+    ring0["width"] / 2.0 + mdl0["width"] / 2.0 + MIDDLE_SECTION_SETTINGS[0]["location"][0],
     ring0["length"] / 2.0 + ring1["length"] / 2.0,
     tocm(0)
 )
 RING_SECTION_SETTINGS[1]["location"] = (
-    ring1["width"] / 2 + mdl1["width"] / 2,
+    ring1["width"] / 2.0 + mdl1["width"] / 2.0 + MIDDLE_SECTION_SETTINGS[1]["location"][0],
     tocm(0),
     tocm(0),
 )
 RING_SECTION_SETTINGS[2]["location"] = (
-    ring2["width"] / 2 + mdl2["width"] / 2,
+    ring2["width"] / 2.0 + mdl2["width"] / 2.0 + MIDDLE_SECTION_SETTINGS[2]["location"][0],
     -(ring2["length"] / 2.0 + ring1["length"] / 2.0),
     tocm(0)
 )
@@ -873,17 +873,17 @@ pinky2 = PINKY_SECTION_SETTINGS[2]["base_dimensions"]
 # we need to adjust the ycoord locations to align with the rest.
 pinky_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (pinky1["length"] / 2.0 + pinky0["length"]) - tocm(13)
 PINKY_SECTION_SETTINGS[0]["location"] = (
-    pinky0["width"] / 2 + ring0["width"] + mdl0["width"] / 2,
+    pinky0["width"] / 2.0 + ring0["width"] / 2.0 + RING_SECTION_SETTINGS[0]["location"][0],
     pinky0["length"] / 2.0 + pinky1["length"] / 2.0 + pinky_ycoord_adjustment,
     tocm(0)
 )
 PINKY_SECTION_SETTINGS[1]["location"] = (
-    pinky1["width"] / 2 + ring1["width"] + mdl1["width"] / 2,
+    pinky1["width"] / 2.0 + ring1["width"] / 2.0 + RING_SECTION_SETTINGS[1]["location"][0],
     tocm(0) + pinky_ycoord_adjustment,
     tocm(0),
 )
 PINKY_SECTION_SETTINGS[2]["location"] = (
-    pinky0["width"] / 2 + ring0["width"] + mdl0["width"] / 2,
+    pinky2["width"] / 2.0 + ring2["width"] / 2.0 + RING_SECTION_SETTINGS[2]["location"][0],
     -(pinky2["length"] / 2.0 + pinky1["length"] / 2.0) + pinky_ycoord_adjustment,
     tocm(0)
 )
