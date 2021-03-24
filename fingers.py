@@ -357,17 +357,17 @@ INDEX_SECTION_SETTINGS.append(indx1_settings)
 
 # base dimensions
 indx2_width = indx_row_width
-indx2_length = tocm(26)
+indx2_length = tocm(22)
 indx2_hight = tocm(10)
 
 # switch center will be transformed by these distances from base center
-indx2_switch_center = (tocm(0.25), tocm(0.5), tocm(0))
+indx2_switch_center = (tocm(0.25), tocm(-1.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indx2_surf_low = indx2_hight
 indx2_surf_mdl = indx2_surf_low + tocm(5)
-indx2_surf_high = indx2_surf_low + tocm(13)
+indx2_surf_high = indx2_surf_low + tocm(11.77)
 
 # the incline direction
 # set three corners that would define surface angle.
