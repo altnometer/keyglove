@@ -202,17 +202,17 @@ MIDDLE_SECTION_SETTINGS.append(mdl1_settings)
 
 # base dimensions
 mdl2_width = mdl_row_width
-mdl2_length = tocm(26)
+mdl2_length = tocm(22)
 mdl2_hight = tocm(7)
 
 # switch center will be transformed by these distances from base center
-mdl2_switch_center = (tocm(-0.25), tocm(2), tocm(0))
+mdl2_switch_center = (tocm(-0.25), tocm(0), tocm(0))
 
 # switch surface:
 # the incline magnitude
 mdl2_surf_low = mdl2_hight
 mdl2_surf_mdl = mdl2_surf_low + tocm(1.5)
-mdl2_surf_high = mdl2_surf_low + tocm(10)
+mdl2_surf_high = mdl2_surf_low + tocm(8.66)
 
 # the incline direction
 # set three corners that would define surface angle.
