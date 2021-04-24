@@ -745,7 +745,7 @@ RING_SECTION_SETTINGS[2]["location"] = (
 # base dimensions
 pinky0_width = pinky_row_width
 pinky0_length = tocm(18)
-pinky0_hight = tocm(20.4)
+pinky0_hight = tocm(22.4)
 
 # switch center: move away from geometric center by these values
 pinky0_switch_center = (tocm(-1), tocm(-1.5), tocm(0))
