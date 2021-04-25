@@ -1146,73 +1146,6 @@ def shell(rootComp, ui):  # {{{
     shellFeats.add(shellFeatureInput)
 # }}}
 
-
-def add_dove_tail(rootComp, ui):  # {{{
-    occs = rootComp.occurrences
-    comp = occs.item(IDX_COMPONENT_WITH_COMPBINED_BODY).component
-    for b in comp.bRepBodies:
-        if comp.name in b.name:
-            targetBody = b
-            # find the bottom face to get the front y coord (the least value).
-            for f in b.faces:
-                if f.vertices.count == 4:
-                    if f.vertices.item(0).geometry.z == 0.0 and f.vertices.item(2).geometry.z == 0.0:
-                        face = f
-    # Create two dove tail sketches on the xy plane.
-    sketches = comp.sketches
-    sketch = sketches.add(comp.xYConstructionPlane)
-    sketch.name = "{}_dove_tail".format(comp.name)
-    # get the least y coord, this would be the front of the section.
-    ycoord = 0
-    for v in face.vertices:
-        if v.geometry.y < ycoord:
-            ycoord = v.geometry.y
-    y0 = ycoord
-    y1 = y0
-    y2 = y0 - DOVE_TAIL_LENGTH
-    x1 = DOVE_TAIL_WIDTH_BASE / 2.0
-    x2 = DOVE_TAIL_WIDTH_END / 2.0
-    # left dove tail
-    x_adj = DOVE_TAIL_LOC_LEFT
-    lines = sketch.sketchCurves.sketchLines
-    line1 = lines.addByTwoPoints(adsk.core.Point3D.create(-x1 + x_adj, y1, 0), adsk.core.Point3D.create(-x2 + x_adj, y2, 0))
-    line2 = lines.addByTwoPoints(line1.endSketchPoint, adsk.core.Point3D.create(x2 + x_adj, y2, 0))
-    line3 = lines.addByTwoPoints(line2.endSketchPoint, adsk.core.Point3D.create(x1 + x_adj, y1, 0))
-    lines.addByTwoPoints(line3.endSketchPoint, line1.startSketchPoint)
-    # right dove tail
-    x_adj = DOVE_TAIL_LOC_RIGHT
-    # lines = sketch.sketchCurves.sketchLines
-    line5 = lines.addByTwoPoints(adsk.core.Point3D.create(-x1 + x_adj, y1, 0), adsk.core.Point3D.create(-x2 + x_adj, y2, 0))
-    line6 = lines.addByTwoPoints(line5.endSketchPoint, adsk.core.Point3D.create(x2 + x_adj, y2, 0))
-    line7 = lines.addByTwoPoints(line6.endSketchPoint, adsk.core.Point3D.create(x1 + x_adj, y1, 0))
-    lines.addByTwoPoints(line7.endSketchPoint, line5.startSketchPoint)
-    # collect sketch profiles
-    profs = adsk.core.ObjectCollection.create()
-    for prof in sketch.profiles:
-        profs.add(prof)
-    #comp.bRepBodies extrude the sketch
-    extrudes = comp.features.extrudeFeatures
-    extInput_switch = extrudes.createInput(profs, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-    distance = adsk.core.ValueInput.createByReal(DOVE_TAIL_HIGHT)
-    extInput_switch.setDistanceExtent(False, distance)
-    extrudes.add(extInput_switch)
-    tail1 = comp.bRepBodies.item(comp.bRepBodies.count - 2)
-    tail2 = comp.bRepBodies.item(comp.bRepBodies.count - 1)
-
-    combineFeatures = rootComp.features.combineFeatures
-    toolBodies = adsk.core.ObjectCollection.create()
-    toolBodies.add(tail1)
-    toolBodies.add(tail2)
-
-    combineInput = combineFeatures.createInput(targetBody, toolBodies)
-    combineInput.operation = adsk.fusion.FeatureOperations.JoinFeatureOperation
-    combineInput.isKeepToolBodies = False
-    combineFeatures.add(combineInput)
-    sketch.deleteMe()
-# }}}
-# }}}
-
-
 # cut holes through switch surface for switches to sit in.
 def cut_switch_holes(rootComp, ui):  # {{{
     occs = rootComp.occurrences
@@ -1336,7 +1269,6 @@ def run(context):  # {{{
                 # print(subComp.revisionId)
                 add_finger_segment(subComp, segment_settings, ui)
         combine(rootComp, ui)
-        # add_dove_tail(rootComp, ui)
         # offset(rootComp, ui)
         shell(rootComp, ui)
         cut_switch_holes(rootComp, ui)
