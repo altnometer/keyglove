@@ -273,17 +273,17 @@ MIDDLE_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 indx0_width = indx_row_width
-indx0_length = tocm(22)
+indx0_length = tocm(20)
 indx0_hight = tocm(19)
 
 # switch center: move away from geometric center by these values
-indx0_switch_center = (tocm(2), tocm(-1), tocm(0))
+indx0_switch_center = (tocm(2), tocm(0), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indx0_surf_low = indx0_hight
 indx0_surf_mdl = indx0_surf_low + tocm(5)
-indx0_surf_high = indx0_surf_low + tocm(13)
+indx0_surf_high = indx0_surf_low + tocm(12.27)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -429,17 +429,17 @@ INDEX_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 indxpls0_width = indxpls_width
-indxpls0_length = tocm(24)
+indxpls0_length = tocm(20)
 indxpls0_hight = tocm(27)
 
 # switch center: move away from geometric center by these values
-indxpls0_switch_center = (tocm(3), tocm(-2.5), tocm(0))
+indxpls0_switch_center = (tocm(3), tocm(-0.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indxpls0_surf_low = indxpls0_hight
 indxpls0_surf_mdl = indxpls0_surf_low + tocm(12)
-indxpls0_surf_high = indxpls0_surf_low + tocm(17)
+indxpls0_surf_high = indxpls0_surf_low + tocm(16.16)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -557,7 +557,7 @@ indxpls1 = INDEXPLUS_SECTION_SETTINGS[1]["base_dimensions"]
 indxpls2 = INDEXPLUS_SECTION_SETTINGS[2]["base_dimensions"]
 # the finger section is centered at mdl1 center,
 # we need to adjust the indxpls locations to align with the rest.
-indxpls_ycoord_adjustment = (mdl1["length"] / 2 + mdl0["length"]) - (indxpls1["length"] / 2.0 + indxpls0["length"])
+indxpls_ycoord_adjustment = tocm(-2.5)
 INDEXPLUS_SECTION_SETTINGS[0]["location"] = (
     -(indxpls0["width"] / 2.0 + indx0["width"] / 2.0) + INDEX_SECTION_SETTINGS[0]["location"][0],
     indxpls0["length"] / 2.0 + indxpls1["length"] / 2.0 + indxpls_ycoord_adjustment,
@@ -588,16 +588,16 @@ INDEXPLUS_SECTION_SETTINGS[2]["location"] = (
 
 # base dimensions
 ring0_width = ring_row_width - tocm(1)
-ring0_length = tocm(22)
+ring0_length = tocm(20)
 ring0_hight = tocm(13)
 
 # switch center: move away from geometric center by these values
-ring0_switch_center = (tocm(-0.75), tocm(-0.5), tocm(0))
+ring0_switch_center = (tocm(-0.75), tocm(0.5), tocm(0))
 
 # switch surface:
 ring0_surf_low = ring0_hight
 ring0_surf_mdl = ring0_surf_low + tocm(2)
-ring0_surf_high = ring0_surf_low + tocm(12.5)
+ring0_surf_high = ring0_surf_low + tocm(11.55)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -1012,8 +1012,8 @@ def add_finger_segment(comp, settings, ui):  # {{{
         switch_surface_center.z + settings["switch_center"][2],
     )
     switch_corner = (
-        switch_center[0] + SWITCH_WIDTH / 2,
-        switch_center[1] + SWITCH_LENGTH / 2,
+        switch_center[0] + SWITCH_WIDTH / 2.0,
+        switch_center[1] + SWITCH_LENGTH / 2.0,
         switch_center[2]
     )
 
