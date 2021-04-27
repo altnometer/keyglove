@@ -277,7 +277,7 @@ indx0_length = tocm(20)
 indx0_hight = tocm(19)
 
 # switch center: move away from geometric center by these values
-indx0_switch_center = (tocm(2), tocm(0), tocm(0))
+indx0_switch_center = (tocm(1.91), tocm(0.058), tocm(0))
 
 # switch surface:
 # the incline magnitude
@@ -433,7 +433,7 @@ indxpls0_length = tocm(20)
 indxpls0_hight = tocm(27)
 
 # switch center: move away from geometric center by these values
-indxpls0_switch_center = (tocm(1.034), tocm(-0.5), tocm(0))
+indxpls0_switch_center = (tocm(1.034), tocm(-0.532), tocm(0))
 
 # switch surface:
 # the incline magnitude
@@ -592,7 +592,7 @@ ring0_length = tocm(20)
 ring0_hight = tocm(13)
 
 # switch center: move away from geometric center by these values
-ring0_switch_center = (tocm(-0.75), tocm(0.5), tocm(0))
+ring0_switch_center = (tocm(-0.7), tocm(0.6), tocm(0))
 
 # switch surface:
 ring0_surf_low = ring0_hight
