@@ -105,7 +105,8 @@ inner_segment_width = tocm(16)
 base_segment_width = tocm(98)
 base0_length = tocm(58)
 adjust_xcoord_for_base = tocm(9)
-adjust_ycoord_for_base = tocm(22.5) - (base0_length / 2)
+# increase to move toward the finger section
+adjust_ycoord_for_base = tocm(26.5) - (base0_length / 2)
 adjust_xcoord_relative_to_fingers_section = tocm(19)
 adjust_ycoord_relative_to_fingers_section = tocm(-12)
 
@@ -219,7 +220,7 @@ inner0_adjust_xcoord_segment_position = tocm(-4)
 inner0_adjust_xcoord = adjust_xcoord_relative_to_fingers_section \
     + inner0_adjust_xcoord_segment_position
 # increase to move away from finger section
-inner0_ycoord_adjust = tocm(5) + adjust_ycoord_relative_to_fingers_section
+inner0_ycoord_adjust = tocm(0) + adjust_ycoord_relative_to_fingers_section
 THUMB_INNER_SECTION_SETTINGS[0]["location"] = (
     inner0_xcoord + inner0_adjust_xcoord,
     tocm(0) - inner0_ycoord_adjust,
@@ -292,7 +293,7 @@ middle0_adjust_xcoord = middle0_adjust_xcoord_for_rotation +\
     adjust_xcoord_relative_to_fingers_section +\
     middle0_adjust_xcoord_for_width_change
 # increase to move away from finger section
-middle0_ycoord_adjust = tocm(7) + adjust_ycoord_relative_to_fingers_section
+middle0_ycoord_adjust = tocm(2) + adjust_ycoord_relative_to_fingers_section
 THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
     middle0_xcoord + middle0_adjust_xcoord,
     tocm(0) - middle0_ycoord_adjust,
@@ -314,7 +315,7 @@ THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
 # base dimensions
 outer0_width = outer_segment_width
 outer0_length = tocm(32)
-outer0_hight = THUMB_SECTION_HIGHT + tocm(32)
+outer0_hight = THUMB_SECTION_HIGHT + tocm(35)
 
 # switch center
 outer0_switch_center = (tocm(-1), tocm(5), tocm(0))
