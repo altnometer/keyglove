@@ -102,7 +102,7 @@ DOVE_TAIL_WIDTH_END = tocm(17)
 ########################################################################## {{{
 mdl_row_width = tocm(20)
 indx_row_width = tocm(20)
-indxpls_width = tocm(20)
+indxpls_width = tocm(17)
 ring_row_width = tocm(20)
 pinky_row_width = tocm(20)
 
@@ -433,13 +433,13 @@ indxpls0_length = tocm(20)
 indxpls0_hight = tocm(27)
 
 # switch center: move away from geometric center by these values
-indxpls0_switch_center = (tocm(3), tocm(-0.5), tocm(0))
+indxpls0_switch_center = (tocm(1.034), tocm(-0.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indxpls0_surf_low = indxpls0_hight
-indxpls0_surf_mdl = indxpls0_surf_low + tocm(12)
-indxpls0_surf_high = indxpls0_surf_low + tocm(16.16)
+indxpls0_surf_mdl = indxpls0_surf_low + tocm(10.2)
+indxpls0_surf_high = indxpls0_surf_low + tocm(14.36)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -470,18 +470,18 @@ INDEXPLUS_SECTION_SETTINGS.append(indxpls0_settings)
 ############## indxpls 1 ################# {{{3
 
 # base dimensions
-indxpls1_width = indxpls_width
+indxpls1_width = indxpls_width + tocm(1)
 indxpls1_length = tocm(20)
 indxpls1_hight = tocm(22)
 
 # switch center: move away from geometric center by these values
-indxpls1_switch_center = (tocm(2), tocm(0), tocm(0))
+indxpls1_switch_center = (tocm(0.688), tocm(0), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indxpls1_surf_low = indxpls1_hight
-indxpls1_surf_mdl = indxpls1_surf_low + tocm(17)
-indxpls1_surf_high = indxpls1_surf_low + tocm(17)
+indxpls1_surf_mdl = indxpls1_surf_low + tocm(15.3)
+indxpls1_surf_high = indxpls1_surf_low + tocm(15.3)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -517,13 +517,13 @@ indxpls2_length = tocm(19)
 indxpls2_hight = tocm(22)
 
 # switch center will be transformed by these distances from base center
-indxpls2_switch_center = (tocm(3), tocm(-0.5), tocm(0))
+indxpls2_switch_center = (tocm(1.125), tocm(-0.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 indxpls2_surf_low = indxpls2_hight
-indxpls2_surf_mdl = indxpls2_surf_low + tocm(15)
-indxpls2_surf_high = indxpls2_surf_low + tocm(18)
+indxpls2_surf_mdl = indxpls2_surf_low + tocm(12.75)
+indxpls2_surf_high = indxpls2_surf_low + tocm(15.75)
 
 # the incline direction
 # set three corners that would define surface angle.
