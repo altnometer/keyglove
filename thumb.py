@@ -241,17 +241,17 @@ THUMB_INNER_SECTION_SETTINGS[0]["location"] = (
 
 # base dimensions
 middle0_width = middle_segment_width
-middle0_length = tocm(33)
+middle0_length = tocm(27)
 middle0_hight = THUMB_SECTION_HIGHT + tocm(30)
 
 # switch center
-middle0_switch_center = (tocm(-1), tocm(2), tocm(0))
+middle0_switch_center = (tocm(-0.758), tocm(-1), tocm(0))
 
 # switch surface:
 # the incline magnitude
 middle0_surf_low = middle0_hight
 middle0_surf_mdl = middle0_surf_low + tocm(12)
-middle0_surf_high = middle0_surf_low + tocm(17)
+middle0_surf_high = middle0_surf_low + tocm(16.09)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -284,7 +284,7 @@ THUMB_MIDDLE_SECTION_SETTINGS.append(middle0_settings)
 ############segment locations############### {{{3
 middle0 = THUMB_MIDDLE_SECTION_SETTINGS[0]["base_dimensions"]
 middle0_xcoord = -(middle_segment_width / 2 + inner_segment_width / 2) + inner0_xcoord
-# positive values move the segment to the right.
+# greater values move the segment to the right.
 middle0_adjust_xcoord_for_rotation = tocm(3)
 # any segment width change may displace the original xcoord, adjust for this
 # with this setting.
@@ -293,7 +293,7 @@ middle0_adjust_xcoord = middle0_adjust_xcoord_for_rotation +\
     adjust_xcoord_relative_to_fingers_section +\
     middle0_adjust_xcoord_for_width_change
 # increase to move away from finger section
-middle0_ycoord_adjust = tocm(2) + adjust_ycoord_relative_to_fingers_section
+middle0_ycoord_adjust = tocm(-1) + adjust_ycoord_relative_to_fingers_section
 THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
     middle0_xcoord + middle0_adjust_xcoord,
     tocm(0) - middle0_ycoord_adjust,
@@ -314,17 +314,17 @@ THUMB_MIDDLE_SECTION_SETTINGS[0]["location"] = (
 
 # base dimensions
 outer0_width = outer_segment_width
-outer0_length = tocm(32)
-outer0_hight = THUMB_SECTION_HIGHT + tocm(35)
+outer0_length = tocm(25)
+outer0_hight = THUMB_SECTION_HIGHT + tocm(35.4375)
 
 # switch center
-outer0_switch_center = (tocm(-1), tocm(5), tocm(0))
+outer0_switch_center = (tocm(-1), tocm(1.5), tocm(0))
 
 # switch surface:
 # the incline magnitude
 outer0_surf_low = outer0_hight
-outer0_surf_mdl = outer0_surf_low + tocm(2)
-outer0_surf_high = outer0_surf_low + tocm(2)
+outer0_surf_mdl = outer0_surf_low + tocm(1.5625)
+outer0_surf_high = outer0_surf_low + tocm(1.5625)
 
 # the incline direction
 # set three corners that would define surface angle.
@@ -365,7 +365,7 @@ outer0_adjust_xcoord = outer0_adjust_xcoord_for_rotation +\
     adjust_xcoord_relative_to_fingers_section +\
     outer0_adjust_xcoord_for_width_change
 # increase to move away from finger section
-outer0_ycoord_adjust = tocm(5) + adjust_ycoord_relative_to_fingers_section
+outer0_ycoord_adjust = tocm(1.5) + adjust_ycoord_relative_to_fingers_section
 THUMB_OUTER_SECTION_SETTINGS[0]["location"] = (
     outer0_xcoord + outer0_adjust_xcoord,
     tocm(0) - outer0_ycoord_adjust,
