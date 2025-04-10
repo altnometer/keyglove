@@ -1,0 +1,220 @@
+* Projects name: Customizable KeyGlove keyboard
+
+TODO: include an image
+
+** [[Table of Contents]]
+
+** [[Project Overview]]
+
+** [[Features]]
+
+** [[Parts List]]
+
+** [[Build Process]]
+
+** [[Wiring and Soldering]]
+
+** [[QMK Firmware Setup]]
+
+** [[Usage]]
+
+** [[Customazation]]
+
+** [[Contributing]]
+
+** [[License]]
+
+** [[Acknowledgments]]
+
+
+* Project Overview
+
+A brief description of your keyboard:
+- what makes it unique (e.g., ergonomic, wireless, THIRD-printed case).
+- Target audience (e.g., writers, coders, gamers, etc).
+- Tools required (soldering tools, THIRD printer, etc).
+
+* Features
+
+** Layout
+
+minimal, ergonomic, ortholinear, split, etc
+
+** Switches
+
+Your preferred switches, e.g.,
+- Cherry MX Blue,
+- Gateron Brown,
+- etc
+
+** Connectivity
+
+USB
+
+** Case Material
+
+3D-printed,
+Tried only:
+- PEG type plastics for durability and strength
+
+* Parts List
+
+There are 36 keys in this keyboard. Hence, for things like
+- key switches
+- keycaps
+- diods
+- etc
+You will need at least 36 pieces of each. Make sure you have some
+spare ones as well.
+
+** 3D-Printed Case
+
+Start by printing the cases from provided STL files. If you wish to
+adjust the key positions, use the scripts (TODO: link) to create
+modified cases (for right and left hands).
+
+
+
+** Microcontroller
+
+Quantity: 2
+
+** Key Switches
+
+1. key switches, e.g.,  Gateron Browns, Plus a few spare ones
+2. Different keys for finger keys (e.g., Gateron Brown) and thumb keys
+   (used mainly for layer switching), e.g., Kailh Silver, linear, with
+   shorter activation levels, with added key rings to minimize time,
+   distance traveled for faster responses.
+
+** Keycaps
+
+DSA key caps. Please, be advise, you will need to grind off some of
+the keycaps to fit them. Hence, make sure you have some spare keycaps.
+
+ [[https://aliexpress.ru/item/32850729893.html?spm=a2g2w.orderdetail.0.0.12124aa6Vw1juY&sku_id=65628321594][AliExpress DSA keycaps]]
+
+** Diodes
+
+quality diodes.
+
+** 4 pole 3.5mm trrs audio jack socket
+
+Make sure it is of trrs type (not yrs).
+
+For example:
+[[./images/trrs_audio_jack_socket.jpg_220x220.webp]]
+
+** other parts
+
+TODO: make their own sections
+
+4 pole 3.5mm trrs audio jack cable
+
+USB type A (largest USB connectors for durability).
+- socket
+- cable
+
+
+** soldering wire
+
+* Build Process
+
+** Prepare the Case
+
+Print the case from the =3d_prints= directory. Ensure that surfaces for
+the key switches are even and smooth. Sand and finish to your liking.
+
+** Assemble Components
+
+- Glue the switches section and hand rest section together.
+- find the best location for the palm rest section (location for the right and left
+  hands may differ).
+
+Mount switches:
+- ensure consistent orientation
+Mount other components
+- USB socket
+- trrs socket
+  + connect right and left hand parts
+  + !!! Never disconnect right and left parts while the keyboard is
+    powered.
+- TODO: complete list
+
+There is not specific holder for the micro controller.
+
+
+** Solder Switches and Diodes
+
+*** Wiring and Soldering
+
+TODO: add images of wiring
+
+Maybe (not likely) wiring schematic on or Fritzing diagram.
+
+**** switches and diodes
+
+**** 4 pole 3.5mm trrs audio jack socket
+
+Insert, then solder.
+
+!!! Pull up resistor (include resistor specs).
+
+**** USB type A
+
+Insert, then solder.
+
+There is a rudimentary holder for the socket. You may need to cut the
+place holder to size. Just use the soldering iron to melt it to size.
+Glue for greater strength.
+
+
+
+* QMK Firmware Setup
+
+** Flashing the Micro controller:
+
+** Customize keymaps using QMK
+
+* Usage
+
+Ensure your elbow are the same level as the wrists.
+
+- Connect via USB or Bluetooth
+
+* Customazation
+
+- Print out,
+- assemble switches and caps,
+- find your own location for the palm rest.
+- try out:
+  + keep checking the fit for a weak or two (it is better to let your
+    hand adjust a little rather than adjusting the key locations for a
+    new cycle)
+- when made your mind, either
+  + solder the keys and complete your fully functional keyboard
+  OR
+  + adjust the settings in the scripts (TODO: link) to modify the key
+    locations.
+
+- Modify the case design in =cad_models/=
+
+* Contributing
+
+The repository is not under any active maintenance. It is simple
+enough. No need for complexity. When you find your best fit, give it a
+year or two to drive test. You may just enjoy easier, more productive
+interacting with a computer after.
+
+Consider migrating the scripts to open source software (solutions).
+
+1. Fork the repository.
+2. Submit a PR with clear changes.
+
+* License
+
+This project is licensed under the MIT License
+
+* Acknowledgments
+
+Inspired by [[https://qmk.fm/][QMK community]]
