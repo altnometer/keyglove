@@ -1,6 +1,27 @@
 * Projects name: Customizable KeyGlove keyboard
 
-TODO: include an image
+This repository can help you build a personalized keyboard that
+matches your hand for a close to perfect fit.
+
+1. Use the provided scripts ([[./fingers.py]] and [[./thumb.py]]) to adjust
+   the
+   - location,
+     + in horizontal and
+     + vertical dimensions,
+   - incline and
+   - rotation
+   of the keys to match exactly your finger placement.
+2. Combine the parts in CAD (computer aided design) program.
+3. Print out.
+4. Build.
+5. Try out.
+6. Repeat until satisfied.
+
+#+caption: keyglove_ergonomic_keyboard
+#+ATTR_ORG: :width 800px
+#+attr_html: :width 150px
+[[./images/keyglove_right_left_apr-22-2022.jpg]]
+
 
 ** [[Table of Contents]]
 
@@ -29,6 +50,25 @@ TODO: include an image
 
 * Project Overview
 
+From play dough concept:
+#+caption: keyglove_playdough_concept
+#+ATTR_ORG: :width 800px
+#+attr_html: :width 150px
+[[./images/keyglove_playdough_concept.jpg]]
+
+Through countless trials:
+#+caption: keyglove_3d_print_model
+#+ATTR_ORG: :width 800px
+#+attr_html: :width 150px
+[[./images/keyglove_3d_print.png]]
+
+Close to a perfect fit:
+#+caption: keyglove_ergonomic_keyboard
+#+ATTR_ORG: :width 800px
+#+attr_html: :width 150px
+[[./images/keyglove_right_apr-22-2022.jpg]]
+
+TODO:
 A brief description of your keyboard:
 - what makes it unique (e.g., ergonomic, wireless, THIRD-printed case).
 - Target audience (e.g., writers, coders, gamers, etc).
@@ -38,7 +78,16 @@ A brief description of your keyboard:
 
 ** Layout
 
-minimal, ergonomic, ortholinear, split, etc
+1. The location, incline and rotation of every key is found through
+   countless trials to match the optimal placement of fingers of my
+   hand. No lifting of the palm is necessary to input the whole range
+   of characters.
+2. (TODO: link) The [[QMK Firmware Setup][QMK firmware]] is used
+   - to enable the layout with all modifier keys (i.e., =Ctrl=, =Shift=
+     and =Meta=) on the home row.
+   - to enable activating the layout layers for
+     + numbers and
+     + symbols
 
 ** Switches
 
@@ -172,7 +221,82 @@ Glue for greater strength.
 
 * QMK Firmware Setup
 
+Please, see the [[https://github.com/altnometer/qmk_firmware][my QMK firmwaer repository]] for the configuration
+examples.
+
+In this repository, my settings for this keyboard are located in:
+- =./qmk_firmware/keyboards/handwired/altnometer/= directory
+
+
+** Example of BEAKL 10 layout
+
+As an example, consider the settings for the BEAKL 10 layout located
+in the file:
+- =./qmk_firmware/keyboards/handwired/altnometer/keymaps/beakl/keymap.c=
+
+Here is the relevant extract from the file:
+#+begin_src C
+// ./qmk_firmware/keyboards/handwired/altnometer/keymaps/beakl/keymap.c
+
+// ...
+
+/* _BEAKL (beakl10)
+ * ,----------------------------------.             ,----------------------------------.
+ * |  Q   |  H   |  O   |  U   |  X   |             |   G  |   D  |   N  |   M  |   V  |
+ * |------+------+------+------+------+             +------+------+------+------+------|
+ * |  Y   |  I   |  E   |  A   | .  # |             |   C  |   S  |   R  |   T  |   W  |
+ * |------+------+------+------+------+             +------+------+------+------+------|
+ * |  J   | /  ? | '  ` | ,  ! |  Z   |             |   B  |   P  |   L  |   F  |   K  |
+ * `------+------+------+------+------+             +------+------+------+------+------'
+ *               | Esc  | Spc  | BkSp |             |  Tab | Entr |  Esc |
+ *               `--------------------'             `--------------------'
+ *                   ^      ^      ^                    ^      ^      ^
+ *                  I3     Symb   Nav                 Shft    Num    Shft
+ */
+ [_BEAKL] = LAYOUT(
+  KC_Q   , KC_H   , KC_O   , KC_U   , KC_X   ,                   KC_G   , KC_D   , KC_N   , KC_M   , KC_V   ,
+  KC_Y   , MALT_I , MSFT_E , MCTL_A , MY_DOT ,                   KC_C   , MCTL_S , MSFT_R , MALT_T , KC_W,
+  KC_J   , KC_SLSH, MY_QUOT, MY_MINS, KC_Z   ,                   KC_B   , KC_P   , KC_L   , KC_F   , KC_K   ,
+                    MGUI_BS, L_SYMSP, L_NAVES,                   L_FLRME, L_NUMEN, MY_ALTF
+                    /* MGUI_BS, L_SYMSP, L_NAVES,                   L_FLRME, L_NUMEN, KC_TAB */
+                    /* MGUI_BS, L_SYMSP, L_NAVES,                   L_FLRME, L_NUMEN, TH(0) */
+),
+
+// ...
+
+#+end_src
+
+
+** Firmware settings relevant to wiring
+
+The settings specific to wiring this keyboard are located in:
+- =./qmk_firmware/keyboards/handwired/altnometer/config.h=
+
+
+Some examples of relevant settings are:
+
+#+begin_src C
+// ./qmk_firmware/keyboards/handwired/altnometer/config.h
+
+/* key matrix size */
+// rows are doubled-up
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 5
+#+end_src
+
+#+begin_src C
+// ./qmk_firmware/keyboards/handwired/altnometer/config.h
+// these are the pins on the microcontroler
+// that you solder the rows and columns to
+#define MATRIX_ROW_PINS { B1, B3, B2, B6 }
+#define MATRIX_COL_PINS { B5, B4, E6, D7, C6 }
+#define UNUSED_PINS
+#+end_src
+
+
 ** Flashing the Micro controller:
+
+Please, follow the [[https://qmk.fm/]] instructions.
 
 ** Customize keymaps using QMK
 
